@@ -1,0 +1,165 @@
+/* =====================================================
+   WELCOME CARD
+===================================================== */
+
+.welcome-card{
+
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:35px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+
+}
+
+.welcome-card h2{
+
+    color:var(--primary);
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================================
+   WELCOME HEADER
+===================================================== */
+
+.welcome-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:30px;
+    margin-bottom:25px;
+
+}
+
+.welcome-subtitle{
+
+    margin-top:10px;
+    color:var(--text-light);
+    line-height:1.7;
+    max-width:700px;
+
+}
+
+.welcome-description{
+
+    color:var(--text-light);
+    line-height:1.9;
+    margin-top:20px;
+
+}
+
+
+/* =====================================================
+   UPDATE BOX
+===================================================== */
+
+.update-box{
+
+    background:#F5FAF6;
+    border-left:5px solid var(--primary);
+    border-radius:12px;
+    padding:18px 24px;
+    min-width:180px;
+    flex-shrink:0;
+
+}
+
+.update-box span{
+
+    display:block;
+    font-size:13px;
+    color:var(--text-light);
+    margin-bottom:6px;
+
+}
+
+.update-box strong{
+
+    font-size:18px;
+    color:var(--primary);
+
+}
+
+
+/* =====================================================
+   KPI SECTION
+===================================================== */
+
+.kpi-section{
+
+    margin:35px 0;
+
+}
+
+.kpi-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   KPI CARD
+===================================================== */
+
+.kpi-card{
+
+    background:var(--white);
+    border-radius:16px;
+    padding:25px;
+    box-shadow:var(--shadow);
+    transition:0.3s;
+    border:1px solid #ECECEC;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.kpi-icon{
+
+    width:55px;
+    height:55px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(25,135,84,.10);
+    color:var(--primary);
+    font-size:22px;
+    margin-bottom:18px;
+
+}
+
+.kpi-title{
+
+    font-size:14px;
+    color:var(--text-light);
+    margin-bottom:10px;
+
+}
+
+.kpi-value{
+
+    font-size:32px;
+    font-weight:700;
+    color:#1F2937;
+    margin-bottom:8px;
+
+}
+
+.kpi-unit{
+
+    font-size:14px;
+    color:var(--text-light);
+
+}

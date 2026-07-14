@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Dashboard Sistem Bangunan | EMIS
+    </title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- CSS MODUL -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar"></div>
+
+    <div class="main">
+
+        <!-- HEADER -->
+        <div id="header"></div>
+
+        <main>
+
+            <!-- ===========================
+                 BREADCRUMB
+            ============================ -->
+
+            <div class="breadcrumb">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Sistem Bangunan</span>
+
+            </div>
+
+            <!-- ===========================
+                 HERO
+            ============================ -->
+
+            <section class="page-hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+
+                        MODUL EMIS
+
+                    </span>
+
+                    <h1>
+
+                        Sistem Bangunan
+
+                    </h1>
+
+                    <p>
+
+                        Modul Sistem Bangunan menyajikan dashboard
+                        tata cahaya, tata udara,
+                        transportasi vertikal,
+                        peralatan pendukung,
+                        serta kegiatan pemeliharaan
+                        Gedung A Sekretariat Daerah Provinsi Kalimantan Timur.
+
+                    </p>
+
+                </div>
+
+                <div class="hero-update">
+
+                    <span>
+
+                        Periode Data
+
+                    </span>
+
+                    <strong id="page-period">
+
+                        Juli 2026
+
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                EXECUTIVE SUMMARY
+            ========================================== -->
+
+            <section class="summary-section">
+
+                <div id="summary-grid" class="summary-grid">
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+            <!-- ===========================
+                 DASHBOARD
+            ============================ -->
+
+            <section class="building-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+
+                            DASHBOARD
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard Sistem Bangunan
+
+                        </h2>
+
+                        <p>
+
+                            Dashboard diperbarui setiap bulan
+                            dan menjadi media informasi utama
+                            konservasi energi Gedung A.
+
+                        </p>
+
+                    </div>
+
+                    <div class="section-badge">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        <span id="dashboard-count">
+
+                            5 Dashboard
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================================
+                    NAVIGATION TAB SISTEM BANGUNAN
+                ========================================== -->
+
+                <div class="dashboard-tabs">
+
+                    <button
+                        class="tab active"
+                        data-filter="all">
+
+                        Semua
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="cahaya">
+
+                        Tata cahaya
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="udara">
+
+                        Tata Udara
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="transportasi">
+
+                        Transportasi
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="peralatan">
+
+                        Peralatan
+
+                    </button>
+
+                     <button class="tab"
+                        data-filter="pemeliharaan">
+
+                         Pemeliharaan
+
+                        </button>
+
+                </div>
+
+                <!-- ==========================================
+                VIEW MODE
+                ========================================== -->
+
+                <div class="viewer-toolbar">
+
+                    <div class="viewer-mode">
+
+                        <button
+                            class="mode-btn active"
+                            data-mode="gallery">
+
+                            <i class="fa-solid fa-grip"></i>
+
+                            Galeri
+
+                        </button>
+
+                        <button
+                            class="mode-btn"
+                            data-mode="focus">
+
+                            <i class="fa-solid fa-expand"></i>
+
+                            Fokus
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="building-dashboard">
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+
+        <div id="footer"></div>
+
+    </div>
+
+    <!-- CONFIG -->
+    <script src="/js/config.js"></script>
+
+    <!-- PATH INCLUDE -->
+    <script>
+
+    const INCLUDE_PATH = "../../includes/";
+
+    </script>
+
+    <!-- LOADER -->
+    <script src="/js/loader.js"></script>
+
+    <!-- MODUL -->
+    <script src="config.js"></script>
+
+    <script src="/js/dashboard-router.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

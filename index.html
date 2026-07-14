@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistem Informasi Manajemen Energi | Biro Umum Setda Provinsi Kalimantan Timur</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- component CSS -->
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <img
+                src="/img/logo/logo.png"
+                alt="Logo EMIS"
+                class="sidebar-logo">
+
+            <h2>Sistem Informasi Manajemen Energi</h2>
+
+            <p>Setda Provinsi Kalimantan Timur</p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li class="active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Energi
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-building"></i>
+
+                    Sistem Bangunan
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-temperature-half"></i>
+
+                    Monitoring
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    Edukasi
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Dokumen
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Tentang
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            EMIS v2.0
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <header>
+
+            <div class="header-left">
+
+                <h2>Dashboard Masih Tahap Dikembangkan Oke Oke</h2>
+
+            </div>
+
+            <div class="header-right">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <div class="profile">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Administrator
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <!-- =========================
+                BREADCRUMB
+            ========================== -->
+
+            <div class="breadcrumb">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </div>
+
+            <!-- =========================
+                WELCOME CARD / JUDUL HALAMAN
+            ========================== -->
+
+            <div class="welcome-card">
+
+                <div class="welcome-header">
+
+                    <div>
+
+                        <h2>Selamat Datang</h2>
+
+                        <p class="welcome-subtitle">
+
+                            Portal Informasi Manajemen Energi<br>
+                            Gedung A Sekretariat Daerah<br>
+                            Provinsi Kalimantan Timur
+
+                        </p>
+
+                    </div>
+
+                    <div class="hero-status">
+                        <span class="status-label">
+
+                            EXECUTIVE STATUS
+
+                        </span>
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>Sistem</span>
+
+                            <strong>Aktif</strong>
+
+                        </div>>
+
+                        <div class="status-item">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            <span>Periode</span>
+
+                            <strong id="update-periode">
+
+                                Juli 2026
+
+                            </strong>
+
+                        </div>
+
+                         <div class="status-item">
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        <span>Modul</span>
+
+        <strong id="hero-module-count">
+
+            5
+
+        </strong>
+
+    </div>
+
+    <div class="status-item">
+
+        <i class="fa-solid fa-chart-column"></i>
+
+        <span>Dashboard</span>
+
+        <strong id="hero-dashboard-count">
+
+            4
+
+        </strong>
+
+    </div>
+
+                    </div>
+
+                </div>
+
+                <!----==================DESKRIPSI================== -->
+
+                <p class="welcome-description">
+
+                    Website ini merupakan pusat informasi konservasi energi
+                    yang menyajikan data konsumsi energi,
+                    Intensitas Konsumsi Energi (IKE),
+                    operasional AC,
+                    monitoring cuaca,
+                    implementasi efisiensi energi,
+                    dokumentasi kegiatan,
+                    serta berbagai informasi pendukung lainnya.
+
+                    Pada tahap awal,
+                    informasi disajikan dalam bentuk gambar dashboard
+                    yang diperbarui setiap bulan,
+                    dan pada tahap selanjutnya
+                    akan diintegrasikan dengan Power BI,
+                    Google Looker Studio,
+                    maupun media analisis lainnya.
+
+                </p>
+
+            </div>
+
+            <!-- ==========================================
+                EXECUTIVE KPI
+            ========================================== -->
+
+            <section class="executive-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+
+                            EXECUTIVE OVERVIEW
+
+                        </span>
+
+                        <h2>
+
+                            Ringkasan Sistem EMIS
+
+                        </h2>
+
+                        <p>
+
+                            Ringkasan informasi utama portal
+                            Energy Management Information System.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="executive-grid"
+                    class="executive-grid">
+
+                </div>
+
+            </section>
+
+            
+            <!-- =========================
+                KPI GRID
+            ========================== -->
+
+            <section class="kpi-grid">
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div class="kpi-value">245.230</div>
+
+                    <div class="kpi-title">
+                        Konsumsi Energi 2026 berjalan (kWh)
+                    </div>
+
+                </div>
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div class="kpi-value">145,30</div>
+
+                    <div class="kpi-title">
+                        IKE Gedung 2025
+                    </div>
+
+                </div>
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+
+                    <div class="kpi-value">317</div>
+
+                    <div class="kpi-title">
+                        Unit AC (Indoor)
+                    </div>
+
+                </div>
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="kpi-value">12%</div>
+
+                    <div class="kpi-title">
+                        Efisiensi Energi Terhadap Baseline 2022
+                    </div>
+
+                </div>
+
+            </section>
+            
+            <!-- ==========================================
+                DASHBOARD PRIORITAS/UNGGULAN
+            ========================================== -->
+
+            <section class="latest-section">
+                
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+
+                            DASHBOARD PRIORITAS
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard Unggulan
+
+                        </h2>
+
+                        <p>
+
+                            Dashboard yang menjadi fokus utama
+                            monitoring manajemen energi.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="featured-dashboard"
+                    class="latest-grid">
+
+                </div>
+
+            </section>
+
+            
+            <!-- =========================
+                EXECUTIVE STATISTICS
+            ========================== -->
+
+            <section class="statistics-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+
+                            EXECUTIVE STATISTICS
+
+                        </span>
+
+                        <h2>
+
+                            Statistik Utama
+
+                        </h2>
+
+                        <p>
+
+                            Ringkasan indikator utama sistem manajemen energi.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="statistics-grid"
+                    class="statistics-grid">
+
+                </div>
+
+            </section>
+
+              
+                        
+            <!-- =========================
+                PETA INFORMASI EMIS
+            ========================== -->
+
+            <section class="module-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+                            EXECUTIVE PORTAL
+                        </span>
+
+                        <h2>
+                            Peta Informasi EMIS
+                        </h2>
+
+                        <p>
+                            Kelola seluruh informasi konservasi energi melalui modul utama
+                            Energy Management Information System (EMIS).
+                        </p>
+
+                    </div>
+
+                    <div class="section-badge">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        <span id="module-count">
+                            5 Modul
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div id="module-grid" class="module-grid"></div>
+
+            </section>
+
+            <!-- ==========================================
+                    SEARCH DASHBOARD
+                ========================================== -->
+
+                <div class="dashboard-search">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="dashboard-search"
+                            placeholder="Cari dashboard...">
+
+                    </div>
+
+                </div>
+
+
+            <!-- =========================
+                DASHBOARD TERBARU
+            ========================== -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+                            DASHBOARD
+                        </span>
+
+                        <h2>Dashboard Terbaru</h2>
+
+                        <p>
+                            Dashboard periode terbaru yang diperbarui setiap bulan.
+                        </p>
+
+                    </div>
+
+                    <div class="section-badge">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span id="dashboard-count">
+                            4 Dashboard
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- JavaScript akan mengisi card -->
+                <div id="dashboard-grid" class="dashboard-grid"></div>
+
+            </section>
+
+
+            <!-- ========================================
+                QUICK ACCESS
+            ======================================== -->
+
+            <section class="quick-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+                            AKSES CEPAT
+                        </span>
+
+                        <h2>
+                            Shortcut Layanan Utama
+                        </h2>
+
+                        <p>
+                            Akses langsung menuju dashboard, monitoring, dokumen,
+                            laporan, dan layanan utama Sistem Manajemen Energi.
+                        </p>
+
+                    </div>
+
+                    <div class="section-badge">
+
+                        <i class="fa-solid fa-link"></i>
+
+                        <span id="quick-count">
+                            6 Shortcut
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div id="quick-grid" class="quick-grid"></div>
+
+            </section>
+            
+
+        </main>
+
+        <footer>
+
+            © 2026 Biro Umum Sekretariat Daerah Provinsi Kalimantan Timur
+
+        </footer>
+
+    </div>
+    <script src="js/config.js"></script>
+
+    <script>
+
+    const INCLUDE_PATH = "includes/";
+
+    </script>
+
+    <script src="js/loader.js"></script>
+
+    <script src="js/script.js"></script>
+        
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Dashboard Edukasi | EMIS
+    </title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- CSS MODUL -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar"></div>
+
+    <div class="main">
+
+        <!-- HEADER -->
+        <div id="header"></div>
+
+        <main>
+
+            <!-- ===========================
+                 BREADCRUMB
+            ============================ -->
+
+            <div class="breadcrumb">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Edukasi</span>
+
+            </div>
+
+            <!-- ===========================
+                 HERO
+            ============================ -->
+
+            <section class="page-hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+
+                        MODUL EMIS
+
+                    </span>
+
+                    <h1>
+
+                        Edukasi
+
+                    </h1>
+
+                    <p>
+
+                        Modul Edukasi seputar konservasi energi dan
+                        penerapan efisiensi energi pada bangunan gedung
+
+                    </p>
+
+                </div>
+
+                <div class="hero-update">
+
+                    <span>
+
+                        Update Now
+
+                    </span>
+
+                    <strong id="page-period">
+
+                        2026
+
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                EXECUTIVE SUMMARY
+            ========================================== -->
+
+            <section class="summary-section">
+
+                <div id="summary-grid" class="summary-grid">
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+            <!-- ===========================
+                 DASHBOARD
+            ============================ -->
+
+            <section class="education-section">
+
+                <div class="section-header">
+
+                    <div class="section-info">
+
+                        <span class="section-label">
+
+                            DASHBOARD
+
+                        </span>
+
+                        <h2>
+
+                            Edukasi
+
+                        </h2>
+
+                        <p>
+
+                            Edukasi seputar konservasi energi
+                            dan penerapan efisiensi energi pada bangunan gedung.
+
+                        </p>
+
+                    </div>
+
+                    <div class="section-badge">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        <span id="dashboard-count">
+
+                            5 Dashboard
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================================
+                    NAVIGATION TAB EDUKASI
+                ========================================== -->
+
+                <div class="dashboard-tabs">
+
+                    <button
+                        class="tab active"
+                        data-filter="all">
+
+                        Semua
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="poster">
+
+                        Poster
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="panduan">
+
+                        Panduan
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="video">
+
+                        Video
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        data-filter="infografis">
+
+                        Infografis
+
+                    </button>
+
+                     <button class="tab"
+                        data-filter="materi">
+
+                         Materi
+
+                        </button>
+
+                </div>
+
+                <!-- ==========================================
+                VIEW MODE
+                ========================================== -->
+
+                <div class="viewer-toolbar">
+
+                    <div class="viewer-mode">
+
+                        <button
+                            class="mode-btn active"
+                            data-mode="gallery">
+
+                            <i class="fa-solid fa-grip"></i>
+
+                            Galeri
+
+                        </button>
+
+                        <button
+                            class="mode-btn"
+                            data-mode="focus">
+
+                            <i class="fa-solid fa-expand"></i>
+
+                            Fokus
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="education-dashboard">
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+
+        <div id="footer"></div>
+
+    </div>
+
+    <!-- CONFIG -->
+    <script src="/js/config.js"></script>
+
+    <!-- PATH INCLUDE -->
+    <script>
+
+    const INCLUDE_PATH = "../../includes/";
+
+    </script>
+
+    <!-- LOADER -->
+    <script src="/js/loader.js"></script>
+
+    <!-- MODUL -->
+    <script src="config.js"></script>
+
+    <script src="/js/dashboard-router.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

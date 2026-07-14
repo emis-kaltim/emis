@@ -1,0 +1,117 @@
+/* ==========================
+SIDEBAR
+========================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:var(--primary);
+
+    color:white;
+
+    position:fixed;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+.sidebar li.active a{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    border-radius:12px;
+
+}
+
+.sidebar li.active i{
+
+    color:#ffffff;
+
+}
+
+/* LOGO */
+
+.logo{
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.logo img{
+
+    width:90px;
+
+    margin-bottom:15px;
+
+}
+
+.logo h2{
+
+    font-size:20px;
+
+}
+
+.logo p{
+
+    font-size:13px;
+
+    opacity:.8;
+
+}
+
+/* MENU */
+
+nav ul{
+
+    margin-top:15px;
+
+}
+
+nav li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px 28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+nav li:hover{
+
+    background:var(--primary-light);
+
+}
+
+.active{
+
+    background:var(--primary-light);
+
+}
+
+.sidebar-footer{
+
+    text-align:center;
+
+    padding:20px;
+
+    opacity:.8;
+
+}
