@@ -80,7 +80,7 @@ const MONITORING_DASHBOARDS = [
 
         color:"#0D6EFD",
 
-        image:"/img/dashboard/operasional-ac.png",
+        image:"/emis/img/dashboard/operasional-ac.png",
 
         category:"Monitoring",
 
@@ -108,7 +108,7 @@ const MONITORING_DASHBOARDS = [
 
         color:"#20C997",
 
-        image:"/img/dashboard/monitoring-cuaca.png",
+        image:"/emis/img/dashboard/monitoring-cuaca.png",
 
         category:"Monitoring",
 

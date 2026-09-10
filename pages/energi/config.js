@@ -83,7 +83,7 @@ const ENERGY_DASHBOARDS = [
 
         color: "#198754",
 
-        image: "/img/dashboard/konsumsi-energi.png",
+        image: "/emis/img/dashboard/konsumsi-energi.png",
 
         category: "Energi",
 
@@ -112,7 +112,7 @@ const ENERGY_DASHBOARDS = [
 
         color: "#0D6EFD",
 
-        image: "/img/dashboard/ike.png",
+        image: "/emis/img/dashboard/ike.png",
 
         category: "Energi",
 
@@ -141,7 +141,7 @@ const ENERGY_DASHBOARDS = [
 
         color: "#20C997",
 
-        image: "/img/dashboard/implementasi-efisiensi.png",
+        image: "/emis/img/dashboard/implementasi-efisiensi.png",
 
         category: "Konservasi Energi",
 
@@ -170,7 +170,7 @@ const ENERGY_DASHBOARDS = [
 
         color: "#FD7E14",
 
-        image: "/img/dashboard/analisis-energi.png",
+        image: "/emis/img/dashboard/analisis-energi.png",
 
         category: "Analisis",
 
@@ -199,7 +199,7 @@ const ENERGY_DASHBOARDS = [
 
         color: "#DC3545",
 
-        image: "/img/dashboard/laporan-energi.png",
+        image: "/emis/img/dashboard/laporan-energi.png",
 
         category: "Laporan",
 
