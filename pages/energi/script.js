@@ -7,6 +7,93 @@ document.addEventListener("DOMContentLoaded", init);
 
 let currentView = "gallery";
 
+/* =====================================================
+   DEVICE DETECTION
+===================================================== */
+
+function isMobileDevice(){
+
+    return (
+        window.matchMedia("(pointer: coarse)").matches ||
+        navigator.maxTouchPoints > 1
+    );
+
+}
+
+/* =====================================================
+   PDF PREVIEW
+===================================================== */
+
+function renderPDFPreview(item){
+
+    /* ==========================================
+       MOBILE / TABLET
+    ========================================== */
+
+    if(isMobileDevice()){
+
+        return `
+
+            <div class="viewer-pdf viewer-pdf-mobile">
+
+                <div class="pdf-mobile-content">
+
+                    <div class="pdf-mobile-icon">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                    </div>
+
+                    <h4>PDF Dashboard</h4>
+
+                    <p>
+                        ${item.title}
+                    </p>
+
+                    <span>
+                        ${item.pageSize} ${item.orientation}
+                    </span>
+
+                    <a
+                        href="${item.pdf}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="pdf-mobile-button">
+
+                        Buka Dashboard
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* ==========================================
+       DESKTOP
+    ========================================== */
+
+    return `
+
+        <div class="viewer-pdf">
+
+            <iframe
+                src="${item.pdf}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                title="${item.title}"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    `;
+
+}
 
 /* =====================================================
    INITIALIZATION
@@ -209,15 +296,7 @@ function renderEnergyDashboards(filter="all") {
                  PDF PREVIEW
             ================================== -->
 
-            <div class="viewer-pdf">
-
-                <iframe
-                    src="${item.pdf}#page=1&toolbar=0&navpanes=0&scrollbar=0"
-                    title="${item.title}"
-                    loading="lazy">
-                </iframe>
-
-            </div>
+            ${renderPDFPreview(item)}
 
 
             <!-- ==================================
