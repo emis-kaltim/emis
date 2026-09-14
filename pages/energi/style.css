@@ -353,24 +353,36 @@ color:#ffffff;
 
 
 /* =====================================================
-IMAGE
+PDF PREVIEW
 ===================================================== */
 
-.viewer-image{
+.viewer-pdf{
 
     padding:30px;
 
     background:#F8FAFC;
 
+    display:flex;
+
+    justify-content:center;
+
 }
 
-.viewer-image img{
+.viewer-pdf iframe{
 
     width:100%;
 
+    max-width:850px;
+
+    aspect-ratio:8.5 / 11;
+
+    border:none;
+
     border-radius:14px;
 
-    border:1px solid #E5E7EB;
+    background:#ffffff;
+
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
 
     display:block;
 
@@ -557,6 +569,28 @@ RESPONSIVE
     .viewer-meta i{
 
         color:var(--primary);
+
+    }
+
+    /* ==========================================
+       PDF PREVIEW MOBILE
+    ========================================== */
+
+    .viewer-pdf{
+
+        padding:15px;
+
+    }
+
+    .viewer-pdf iframe{
+
+        width:100%;
+
+        max-width:100%;
+
+        aspect-ratio:8.5 / 11;
+
+        border-radius:10px;
 
     }
 
