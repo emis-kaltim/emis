@@ -20,9 +20,8 @@ const ENERGY_CONFIG = {
 
     totalDashboard: 5
 
-    
-
 };
+
 
 /* =====================================================
    EXECUTIVE SUMMARY
@@ -83,15 +82,17 @@ const ENERGY_DASHBOARDS = [
 
         color: "#198754",
 
-        image: "/emis/img/dashboard/konsumsi-energi.png",
+        pdf: "/emis/pdf/dashboard/konsumsi-energi.pdf",
 
         category: "Energi",
 
         period: "Juli 2026",
 
-        resolution: "1920 × 1080",
+        pageSize: "Letter",
 
-        format: "PNG",
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Dashboard konsumsi energi listrik Gedung A Sekretariat Daerah Provinsi Kalimantan Timur.",
@@ -112,15 +113,17 @@ const ENERGY_DASHBOARDS = [
 
         color: "#0D6EFD",
 
-        image: "/emis/img/dashboard/ike.png",
+        pdf: "/emis/pdf/dashboard/ike.pdf",
 
         category: "Energi",
 
         period: "Juli 2026",
 
-        resolution: "1920 × 1080",
+        pageSize: "Letter",
 
-        format: "PNG",
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Monitoring nilai Intensitas Konsumsi Energi (IKE) sebagai indikator efisiensi penggunaan energi listrik.",
@@ -141,15 +144,17 @@ const ENERGY_DASHBOARDS = [
 
         color: "#20C997",
 
-        image: "/emis/img/dashboard/implementasi-efisiensi.png",
+        pdf: "/emis/pdf/dashboard/implementasi-efisiensi.pdf",
 
         category: "Konservasi Energi",
 
         period: "Juli 2026",
 
-        resolution: "1920 × 1080",
+        pageSize: "Letter",
 
-        format: "PNG",
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Dokumentasi implementasi program konservasi dan efisiensi energi pada Gedung A.",
@@ -170,15 +175,17 @@ const ENERGY_DASHBOARDS = [
 
         color: "#FD7E14",
 
-        image: "/emis/img/dashboard/analisis-energi.png",
+        pdf: "/emis/pdf/dashboard/analisis-energi.pdf",
 
         category: "Analisis",
 
         period: "Juli 2026",
 
-        resolution: "1920 × 1080",
+        pageSize: "Letter",
 
-        format: "PNG",
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Analisis bulanan terhadap pola konsumsi energi sebagai dasar pengambilan keputusan manajemen energi.",
@@ -199,13 +206,17 @@ const ENERGY_DASHBOARDS = [
 
         color: "#DC3545",
 
-        image: "/emis/img/dashboard/laporan-energi.png",
+        pdf: "/emis/pdf/dashboard/laporan-energi.pdf",
 
         category: "Laporan",
 
         period: "Juli 2026",
 
-        format: "Dokumen",
+        pageSize: "Letter",
+
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Ringkasan laporan konsumsi energi, analisis, dan implementasi konservasi energi setiap bulan.",

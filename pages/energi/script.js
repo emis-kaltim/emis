@@ -4,7 +4,9 @@
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", init);
+
 let currentView = "gallery";
+
 
 /* =====================================================
    INITIALIZATION
@@ -65,6 +67,7 @@ function renderSummary(){
 
 }
 
+
 /* =====================================================
    LOAD MODULE INFORMATION
 ===================================================== */
@@ -82,6 +85,7 @@ function loadModuleInformation() {
 
     }
 
+
     // Header Website
     const updatePeriode =
         document.getElementById("update-periode");
@@ -93,6 +97,7 @@ function loadModuleInformation() {
 
     }
 
+
     // Total Dashboard
     const dashboardCount =
         document.getElementById("dashboard-count");
@@ -103,6 +108,7 @@ function loadModuleInformation() {
             `${ENERGY_CONFIG.totalDashboard} Dashboard`;
 
     }
+
 
     // Judul Browser
     document.title =
@@ -121,19 +127,36 @@ function renderEnergyDashboards(filter="all") {
         document.getElementById("energy-dashboard");
 
     if (!container) return;
-    /* Mode Galeri / Fokus*/
-    
+
+
+    /* ==========================================
+       MODE GALERI / FOKUS
+    ========================================== */
+
     container.classList.toggle(
         "focus-mode",
-        currentView==="focus"
+        currentView === "focus"
     );
 
+
     container.innerHTML = "";
+
+
+    /* ==========================================
+       FILTER DASHBOARD
+    ========================================== */
 
     const dashboards =
         filter === "all"
         ? ENERGY_DASHBOARDS
-        : ENERGY_DASHBOARDS.filter(item => item.type === filter);
+        : ENERGY_DASHBOARDS.filter(
+            item => item.type === filter
+        );
+
+
+    /* ==========================================
+       RENDER SETIAP DASHBOARD
+    ========================================== */
 
     dashboards.forEach(item => {
 
@@ -142,6 +165,11 @@ function renderEnergyDashboards(filter="all") {
         <article
             class="viewer"
             id="${item.type}-dashboard">
+
+
+            <!-- ==================================
+                 HEADER
+            ================================== -->
 
             <div class="viewer-header">
 
@@ -165,6 +193,7 @@ function renderEnergyDashboards(filter="all") {
 
                 </div>
 
+
                 <div class="viewer-period">
 
                     <span>Periode</span>
@@ -175,17 +204,30 @@ function renderEnergyDashboards(filter="all") {
 
             </div>
 
-            <div class="viewer-image">
 
-                <img
-                    src="${item.image}"
-                    alt="${item.title}">
+            <!-- ==================================
+                 PDF PREVIEW
+            ================================== -->
+
+            <div class="viewer-pdf">
+
+                <iframe
+                    src="${item.pdf}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                    title="${item.title}"
+                    loading="lazy">
+                </iframe>
 
             </div>
+
+
+            <!-- ==================================
+                 FOOTER
+            ================================== -->
 
             <div class="viewer-footer">
 
                 <div class="viewer-meta">
+
 
                     <span>
 
@@ -195,27 +237,32 @@ function renderEnergyDashboards(filter="all") {
 
                     </span>
 
+
                     <span>
 
-                        <i class="fa-solid fa-image"></i>
+                        <i class="fa-solid fa-file-pdf"></i>
 
                         ${item.format}
 
                     </span>
 
+
                     <span>
 
-                        <i class="fa-solid fa-expand"></i>
+                        <i class="fa-solid fa-file-lines"></i>
 
-                        ${item.resolution}
+                        ${item.pageSize} ${item.orientation}
 
                     </span>
 
+
                 </div>
 
+
                 <a
-                    href="${item.image}"
+                    href="${item.pdf}"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="viewer-button">
 
                     ${item.button}
@@ -226,6 +273,7 @@ function renderEnergyDashboards(filter="all") {
 
             </div>
 
+
         </article>
 
         `;
@@ -234,8 +282,9 @@ function renderEnergyDashboards(filter="all") {
 
 }
 
+
 /* =====================================================
-DASHBOARD FILTER
+   DASHBOARD FILTER
 ===================================================== */
 
 function initTabs(){
@@ -243,15 +292,22 @@ function initTabs(){
     const tabs =
         document.querySelectorAll(".tab");
 
-    tabs.forEach(tab=>{
 
-        tab.addEventListener("click",()=>{
+    tabs.forEach(tab => {
 
-            tabs.forEach(t=>t.classList.remove("active"));
+        tab.addEventListener("click", () => {
+
+            tabs.forEach(t =>
+                t.classList.remove("active")
+            );
+
 
             tab.classList.add("active");
 
-            renderEnergyDashboards(tab.dataset.filter);
+
+            renderEnergyDashboards(
+                tab.dataset.filter
+            );
 
         });
 
@@ -259,8 +315,9 @@ function initTabs(){
 
 }
 
+
 /* =====================================================
-VIEW MODE
+   VIEW MODE
 ===================================================== */
 
 function initViewerMode(){
@@ -268,15 +325,22 @@ function initViewerMode(){
     const buttons =
         document.querySelectorAll(".mode-btn");
 
-    buttons.forEach(btn=>{
 
-        btn.addEventListener("click",()=>{
+    buttons.forEach(btn => {
 
-            buttons.forEach(b=>b.classList.remove("active"));
+        btn.addEventListener("click", () => {
+
+            buttons.forEach(b =>
+                b.classList.remove("active")
+            );
+
 
             btn.classList.add("active");
 
-            currentView = btn.dataset.mode;
+
+            currentView =
+                btn.dataset.mode;
+
 
             renderEnergyDashboards();
 
