@@ -6,6 +6,7 @@
 
 PAGE_CONFIG.title = "Modul Monitoring";
 
+
 const MONITORING_CONFIG = {
 
     /* ==========================================
@@ -21,6 +22,7 @@ const MONITORING_CONFIG = {
     totalDashboard: 2
 
 };
+
 
 /* =====================================================
    EXECUTIVE SUMMARY
@@ -70,58 +72,63 @@ const MONITORING_SUMMARY = [
 const MONITORING_DASHBOARDS = [
 
     {
-        id:"ac",
+        id: "ac",
 
-        type:"ac",
+        type: "ac",
 
-        title:"Operasional AC",
+        title: "Operasional AC",
 
-        icon:"fa-solid fa-snowflake",
+        icon: "fa-solid fa-snowflake",
 
-        color:"#0D6EFD",
+        color: "#0D6EFD",
 
-        image:"/emis/img/dashboard/operasional-ac.png",
+        pdf: "/emis/pdf/dashboard/operasional-ac.pdf",
 
-        category:"Monitoring",
+        category: "Monitoring",
 
-        period:"Juli 2026",
+        period: "Juli 2026",
 
-        resolution:"1920 × 1080",
+        pageSize: "Letter",
 
-        format:"PNG",
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Monitoring operasional AC Gedung A.",
 
-        button:"Lihat Dashboard"
+        button: "Lihat Dashboard"
 
     },
 
+
     {
-        id:"cuaca",
+        id: "cuaca",
 
-        type:"cuaca",
+        type: "cuaca",
 
-        title:"Monitoring Cuaca",
+        title: "Monitoring Cuaca",
 
-        icon:"fa-solid fa-cloud-sun",
+        icon: "fa-solid fa-cloud-sun",
 
-        color:"#20C997",
+        color: "#20C997",
 
-        image:"/emis/img/dashboard/monitoring-cuaca.png",
+        pdf: "/emis/pdf/dashboard/monitoring-cuaca.pdf",
 
-        category:"Monitoring",
+        category: "Monitoring",
 
-        period:"Juli 2026",
+        period: "Juli 2026",
 
-        resolution:"1920 × 1080",
+        pageSize: "Letter",
 
-        format:"PNG",
+        orientation: "Portrait",
+
+        format: "PDF",
 
         description:
         "Monitoring suhu, kelembaban, dan kondisi lingkungan Gedung A.",
 
-        button:"Lihat Dashboard"
+        button: "Lihat Dashboard"
 
     }
 

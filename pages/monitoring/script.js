@@ -4,7 +4,9 @@
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", init);
+
 let currentView = "gallery";
+
 
 /* =====================================================
    INITIALIZATION
@@ -65,6 +67,7 @@ function renderSummary(){
 
 }
 
+
 /* =====================================================
    LOAD MODULE INFORMATION
 ===================================================== */
@@ -82,6 +85,7 @@ function loadModuleInformation() {
 
     }
 
+
     // Header Website
     const updatePeriode =
         document.getElementById("update-periode");
@@ -92,6 +96,7 @@ function loadModuleInformation() {
             MONITORING_CONFIG.period;
 
     }
+
 
     // Total Dashboard
     const dashboardCount =
@@ -104,9 +109,100 @@ function loadModuleInformation() {
 
     }
 
+
     // Judul Browser
     document.title =
         `${MONITORING_CONFIG.title} | EMIS`;
+
+}
+
+
+/* =====================================================
+   DEVICE DETECTION
+===================================================== */
+
+function isMobileDevice(){
+
+    return (
+        window.matchMedia("(pointer: coarse)").matches ||
+        navigator.maxTouchPoints > 1
+    );
+
+}
+
+
+/* =====================================================
+   PDF PREVIEW
+===================================================== */
+
+function renderPDFPreview(item){
+
+    /* ==========================================
+       MOBILE / TABLET
+    ========================================== */
+
+    if(isMobileDevice()){
+
+        return `
+
+            <div class="viewer-pdf viewer-pdf-mobile">
+
+                <div class="pdf-mobile-content">
+
+                    <div class="pdf-mobile-icon">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                    </div>
+
+                    <h4>PDF Dashboard</h4>
+
+                    <p>
+                        ${item.title}
+                    </p>
+
+                    <span>
+                        ${item.pageSize} ${item.orientation}
+                    </span>
+
+                    <a
+                        href="${item.pdf}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="pdf-mobile-button">
+
+                        Buka Dashboard
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* ==========================================
+       DESKTOP
+    ========================================== */
+
+    return `
+
+        <div class="viewer-pdf">
+
+            <iframe
+                src="${item.pdf}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                title="${item.title}"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    `;
 
 }
 
@@ -121,19 +217,26 @@ function renderMonitoringDashboards(filter="all") {
         document.getElementById("monitoring-dashboard");
 
     if (!container) return;
-    /* Mode Galeri / Fokus*/
-    
+
+
+    /* Mode Galeri / Fokus */
+
     container.classList.toggle(
         "focus-mode",
-        currentView==="focus"
+        currentView === "focus"
     );
 
+
     container.innerHTML = "";
+
 
     const dashboards =
         filter === "all"
         ? MONITORING_DASHBOARDS
-        : MONITORING_DASHBOARDS.filter(item => item.type === filter);
+        : MONITORING_DASHBOARDS.filter(
+            item => item.type === filter
+        );
+
 
     dashboards.forEach(item => {
 
@@ -165,6 +268,7 @@ function renderMonitoringDashboards(filter="all") {
 
                 </div>
 
+
                 <div class="viewer-period">
 
                     <span>Periode</span>
@@ -175,13 +279,9 @@ function renderMonitoringDashboards(filter="all") {
 
             </div>
 
-            <div class="viewer-image">
 
-                <img
-                    src="${item.image}"
-                    alt="${item.title}">
+            ${renderPDFPreview(item)}
 
-            </div>
 
             <div class="viewer-footer">
 
@@ -195,27 +295,32 @@ function renderMonitoringDashboards(filter="all") {
 
                     </span>
 
+
                     <span>
 
-                        <i class="fa-solid fa-image"></i>
+                        <i class="fa-solid fa-file-pdf"></i>
 
                         ${item.format}
 
                     </span>
 
+
                     <span>
 
                         <i class="fa-solid fa-expand"></i>
 
-                        ${item.resolution}
+                        ${item.pageSize}
+                        ${item.orientation}
 
                     </span>
 
                 </div>
 
+
                 <a
-                    href="${item.image}"
+                    href="${item.pdf}"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="viewer-button">
 
                     ${item.button}
@@ -234,8 +339,9 @@ function renderMonitoringDashboards(filter="all") {
 
 }
 
+
 /* =====================================================
-DASHBOARD FILTER
+   DASHBOARD FILTER
 ===================================================== */
 
 function initTabs(){
@@ -247,11 +353,15 @@ function initTabs(){
 
         tab.addEventListener("click",()=>{
 
-            tabs.forEach(t=>t.classList.remove("active"));
+            tabs.forEach(
+                t => t.classList.remove("active")
+            );
 
             tab.classList.add("active");
 
-            renderMonitoringDashboards(tab.dataset.filter);
+            renderMonitoringDashboards(
+                tab.dataset.filter
+            );
 
         });
 
@@ -259,8 +369,9 @@ function initTabs(){
 
 }
 
+
 /* =====================================================
-VIEW MODE
+   VIEW MODE
 ===================================================== */
 
 function initViewerMode(){
@@ -272,11 +383,14 @@ function initViewerMode(){
 
         btn.addEventListener("click",()=>{
 
-            buttons.forEach(b=>b.classList.remove("active"));
+            buttons.forEach(
+                b => b.classList.remove("active")
+            );
 
             btn.classList.add("active");
 
-            currentView = btn.dataset.mode;
+            currentView =
+                btn.dataset.mode;
 
             renderMonitoringDashboards();
 
