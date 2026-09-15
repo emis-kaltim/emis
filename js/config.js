@@ -52,13 +52,13 @@ const DASHBOARDS = [
 
         image: "img/dashboard/konsumsi-energi.png",
 
-        period: "Juli 2026",
+        period: "2026",
 
         category: "Energi",
 
         description: "Dashboard konsumsi energi listrik Gedung A.",
 
-        featured:true,
+        featured:false,
 
         link: "pages/energi/index.html#konsumsi"
     },
@@ -72,7 +72,7 @@ const DASHBOARDS = [
 
         image: "img/dashboard/ike.png",
 
-        period: "Juli 2026",
+        period: "2026",
 
         category: "Energi",
 
@@ -92,13 +92,13 @@ const DASHBOARDS = [
 
         image: "img/dashboard/operasional-ac.png",
 
-        period: "Juli 2026",
+        period: "2026",
 
         category: "Monitoring",
 
         description: "Monitoring operasional AC bulanan.",
 
-        featured:true,
+        featured:false,
 
         link: "pages/monitoring/index.html#ac"
     },
@@ -112,7 +112,7 @@ const DASHBOARDS = [
 
         image: "img/dashboard/monitoring-cuaca.png",
 
-        period: "Juli 2026",
+        period: "2026",
 
         category: "Monitoring",
 
