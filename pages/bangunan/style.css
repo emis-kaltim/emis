@@ -353,27 +353,98 @@ color:#ffffff;
 
 
 /* =====================================================
-IMAGE
+VIEWER PDF
 ===================================================== */
 
-.viewer-image{
-
+.viewer-pdf{
     padding:30px;
-
     background:#F8FAFC;
-
+    display:flex;
+    justify-content:center;
 }
 
-.viewer-image img{
-
+.viewer-pdf iframe{
     width:100%;
-
+    max-width:850px;
+    aspect-ratio:8.5 / 11;
+    border:none;
     border-radius:14px;
-
-    border:1px solid #E5E7EB;
-
+    background:#ffffff;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
     display:block;
+}
 
+/* =====================================================
+VIEWER PDF MOBILE
+===================================================== */
+.viewer-pdf-mobile{
+    min-height:420px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    background:#F8FAFC;
+}
+
+.pdf-mobile-content{
+    width:100%;
+    max-width:420px;
+    background:#ffffff;
+    border:1px solid #E5E7EB;
+    border-radius:16px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+.pdf-mobile-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 18px;
+    border-radius:16px;
+    background:#FDECEC;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#DC3545;
+    font-size:32px;
+}
+
+.pdf-mobile-content h4{
+    margin-bottom:8px;
+    font-size:18px;
+    color:var(--text);
+}
+
+.pdf-mobile-content p{
+    margin-bottom:6px;
+    color:var(--text-light);
+    line-height:1.6;
+}
+
+.pdf-mobile-content span{
+    display:block;
+    margin-bottom:22px;
+    color:var(--text-light);
+    font-size:13px;
+}
+
+.pdf-mobile-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:11px 20px;
+    border-radius:10px;
+    background:var(--primary);
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.25s;
+}
+
+.pdf-mobile-button:hover{
+    transform:translateY(-2px);
 }
 
 /* =====================================================

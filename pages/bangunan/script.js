@@ -4,7 +4,9 @@
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", init);
+
 let currentView = "gallery";
+
 
 /* =====================================================
    INITIALIZATION
@@ -23,7 +25,6 @@ function init() {
     initViewerMode();
 
     openDashboardFromHash();
-
 
 }
 
@@ -66,6 +67,7 @@ function renderSummary(){
 
 }
 
+
 /* =====================================================
    LOAD MODULE INFORMATION
 ===================================================== */
@@ -83,6 +85,7 @@ function loadModuleInformation() {
 
     }
 
+
     // Header Website
     const updatePeriode =
         document.getElementById("update-periode");
@@ -93,6 +96,7 @@ function loadModuleInformation() {
             BUILDING_CONFIG.period;
 
     }
+
 
     // Total Dashboard
     const dashboardCount =
@@ -105,9 +109,98 @@ function loadModuleInformation() {
 
     }
 
+
     // Judul Browser
     document.title =
         `${BUILDING_CONFIG.title} | EMIS`;
+
+}
+
+
+/* =====================================================
+   DEVICE DETECTION
+===================================================== */
+
+function isMobileDevice(){
+
+    return window.innerWidth <= 768;
+
+}
+
+
+/* =====================================================
+   PDF PREVIEW
+===================================================== */
+
+function renderPDFPreview(item){
+
+    if(isMobileDevice()){
+
+        return `
+
+            <div class="viewer-pdf-mobile">
+
+                <div class="pdf-mobile-content">
+
+                    <div class="pdf-mobile-icon">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                    </div>
+
+                    <h4>
+
+                        Dashboard ${item.title}
+
+                    </h4>
+
+                    <p>
+
+                        Dashboard tersedia dalam format PDF.
+
+                    </p>
+
+                    <span>
+
+                        ${item.pageSize} • ${item.orientation}
+
+                    </span>
+
+                    <a
+                        href="${item.pdf}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="pdf-mobile-button">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        Buka Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+
+        <div class="viewer-pdf">
+
+            <iframe
+                src="${item.pdf}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                title="${item.title}"
+                loading="lazy">
+
+            </iframe>
+
+        </div>
+
+    `;
 
 }
 
@@ -122,19 +215,26 @@ function renderBuildingDashboards(filter="all") {
         document.getElementById("building-dashboard");
 
     if (!container) return;
-    /* Mode Galeri / Fokus*/
-    
+
+
+    /* Mode Galeri / Fokus */
+
     container.classList.toggle(
         "focus-mode",
-        currentView==="focus"
+        currentView === "focus"
     );
 
+
     container.innerHTML = "";
+
 
     const dashboards =
         filter === "all"
         ? BUILDING_DASHBOARDS
-        : BUILDING_DASHBOARDS.filter(item => item.type === filter);
+        : BUILDING_DASHBOARDS.filter(
+            item => item.type === filter
+        );
+
 
     dashboards.forEach(item => {
 
@@ -176,13 +276,7 @@ function renderBuildingDashboards(filter="all") {
 
             </div>
 
-            <div class="viewer-image">
-
-                <img
-                    src="${item.image}"
-                    alt="${item.title}">
-
-            </div>
+            ${renderPDFPreview(item)}
 
             <div class="viewer-footer">
 
@@ -198,7 +292,7 @@ function renderBuildingDashboards(filter="all") {
 
                     <span>
 
-                        <i class="fa-solid fa-image"></i>
+                        <i class="fa-solid fa-file-pdf"></i>
 
                         ${item.format}
 
@@ -206,17 +300,18 @@ function renderBuildingDashboards(filter="all") {
 
                     <span>
 
-                        <i class="fa-solid fa-expand"></i>
+                        <i class="fa-solid fa-file-lines"></i>
 
-                        ${item.resolution}
+                        ${item.pageSize} • ${item.orientation}
 
                     </span>
 
                 </div>
 
                 <a
-                    href="${item.image}"
+                    href="${item.pdf}"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="viewer-button">
 
                     ${item.button}
@@ -235,8 +330,9 @@ function renderBuildingDashboards(filter="all") {
 
 }
 
+
 /* =====================================================
-DASHBOARD FILTER
+   DASHBOARD FILTER
 ===================================================== */
 
 function initTabs(){
@@ -244,15 +340,21 @@ function initTabs(){
     const tabs =
         document.querySelectorAll(".tab");
 
+
     tabs.forEach(tab=>{
 
         tab.addEventListener("click",()=>{
 
-            tabs.forEach(t=>t.classList.remove("active"));
+            tabs.forEach(t =>
+                t.classList.remove("active")
+            );
 
             tab.classList.add("active");
 
-            renderBuildingDashboards(tab.dataset.filter);
+
+            renderBuildingDashboards(
+                tab.dataset.filter
+            );
 
         });
 
@@ -260,8 +362,9 @@ function initTabs(){
 
 }
 
+
 /* =====================================================
-VIEW MODE
+   VIEW MODE
 ===================================================== */
 
 function initViewerMode(){
@@ -269,15 +372,21 @@ function initViewerMode(){
     const buttons =
         document.querySelectorAll(".mode-btn");
 
+
     buttons.forEach(btn=>{
 
         btn.addEventListener("click",()=>{
 
-            buttons.forEach(b=>b.classList.remove("active"));
+            buttons.forEach(b =>
+                b.classList.remove("active")
+            );
 
             btn.classList.add("active");
 
-            currentView = btn.dataset.mode;
+
+            currentView =
+                btn.dataset.mode;
+
 
             renderBuildingDashboards();
 
@@ -286,4 +395,3 @@ function initViewerMode(){
     });
 
 }
-
