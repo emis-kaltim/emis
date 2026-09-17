@@ -307,7 +307,7 @@ const EXECUTIVE_STATS = [
 
     {
         title:"Konsumsi Energi",
-        value:"128.540",
+        value:"245.230",
         unit:"kWh",
         icon:"fa-solid fa-bolt",
         color:"#198754"
@@ -315,7 +315,7 @@ const EXECUTIVE_STATS = [
 
     {
         title:"IKE",
-        value:"7,84",
+        value:"145,30",
         unit:"kWh/m²",
         icon:"fa-solid fa-chart-line",
         color:"#0D6EFD"
@@ -323,23 +323,23 @@ const EXECUTIVE_STATS = [
 
     {
         title:"Penghematan",
-        value:"8,2",
+        value:"13%",
         unit:"%",
         icon:"fa-solid fa-leaf",
         color:"#20C997"
     },
 
     {
-        title:"Operasional AC",
-        value:"1.482",
+        title:"Operasional AC (jam)",
+        value:"31.000",
         unit:"Jam",
         icon:"fa-solid fa-snowflake",
         color:"#0D6EFD"
     },
 
     {
-        title:"Temperatur",
-        value:"31,5",
+        title:"CDD",
+        value:"121",
         unit:"°C",
         icon:"fa-solid fa-temperature-half",
         color:"#FD7E14"
