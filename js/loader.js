@@ -24,6 +24,8 @@ async function loadComponent(id, file) {
 
             setActiveMenu();
 
+            initMobileSidebar();
+
         }
 
         if(id === "header"){
@@ -242,5 +244,85 @@ function loadFooterInformation(){
             `Update ${SITE_CONFIG.updateMonth} ${SITE_CONFIG.updateYear}`;
 
     }
+
+}
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+function initMobileSidebar(){
+
+    const menuButton =
+        document.getElementById("mobile-menu-btn");
+
+    const sidebar =
+        document.querySelector(".sidebar");
+
+    const overlay =
+        document.getElementById("sidebar-overlay");
+
+
+    /* -----------------------------------------
+       CEK ELEMEN
+    ----------------------------------------- */
+
+    if(!menuButton || !sidebar || !overlay){
+
+        return;
+
+    }
+
+
+    /* -----------------------------------------
+       OPEN SIDEBAR
+    ----------------------------------------- */
+
+    menuButton.addEventListener("click", () => {
+
+        sidebar.classList.add("mobile-open");
+
+        overlay.classList.add("active");
+
+    });
+
+
+    /* -----------------------------------------
+       CLOSE SIDEBAR
+    ----------------------------------------- */
+
+    function closeMobileSidebar(){
+
+        sidebar.classList.remove("mobile-open");
+
+        overlay.classList.remove("active");
+
+    }
+
+
+    /* -----------------------------------------
+       OVERLAY CLICK
+    ----------------------------------------- */
+
+    overlay.addEventListener(
+        "click",
+        closeMobileSidebar
+    );
+
+
+    /* -----------------------------------------
+       MENU CLICK
+    ----------------------------------------- */
+
+    sidebar
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                closeMobileSidebar
+            );
+
+        });
 
 }

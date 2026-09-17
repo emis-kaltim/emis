@@ -115,3 +115,134 @@ nav li:hover{
     opacity:.8;
 
 }
+
+/* =====================================================
+   MOBILE SIDEBAR DRAWER
+===================================================== */
+
+@media(max-width:768px){
+
+    /* -----------------------------------------
+       SIDEBAR
+    ----------------------------------------- */
+
+    .sidebar{
+
+        width:280px;
+
+        height:100vh;
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        z-index:1001;
+
+        transform:translateX(-100%);
+
+        transition:transform .3s ease;
+
+        overflow-y:auto;
+
+        box-shadow:4px 0 20px rgba(0,0,0,.15);
+
+    }
+
+    /* -----------------------------------------
+       SIDEBAR OPEN
+    ----------------------------------------- */
+
+    .sidebar.mobile-open{
+
+        transform:translateX(0);
+
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+    ----------------------------------------- */
+
+    .logo{
+
+        padding:25px 20px;
+
+    }
+
+
+    .logo img{
+
+        width:75px;
+
+    }
+
+
+    .logo h2{
+
+        font-size:18px;
+
+    }
+
+
+    .logo p{
+
+        font-size:12px;
+
+    }
+
+
+    /* -----------------------------------------
+       MENU
+    ----------------------------------------- */
+
+    nav li{
+
+        padding:15px 22px;
+
+    }
+
+
+    /* -----------------------------------------
+       SIDEBAR OVERLAY
+    ----------------------------------------- */
+
+    .sidebar-overlay{
+
+        display:block;
+
+        position:fixed;
+
+        inset:0;
+
+        background:rgba(0,0,0,.45);
+
+        z-index:1000;
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transition:
+
+            opacity .3s ease,
+
+            visibility .3s ease;
+
+    }
+
+
+    /* -----------------------------------------
+       OVERLAY ACTIVE
+    ----------------------------------------- */
+
+    .sidebar-overlay.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+}
