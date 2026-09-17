@@ -24,8 +24,6 @@ async function loadComponent(id, file) {
 
             setActiveMenu();
 
-            initMobileSidebar();
-
         }
 
         if(id === "header"){
@@ -58,28 +56,21 @@ async function loadComponent(id, file) {
 document.addEventListener("DOMContentLoaded", () => {
 
     loadComponent(
-
         "sidebar",
-
         INCLUDE_PATH + "sidebar.html"
-
     );
 
     loadComponent(
-
         "header",
-
         INCLUDE_PATH + "header.html"
-
     );
 
     loadComponent(
-
         "footer",
-
-     INCLUDE_PATH + "footer.html"
-
+        INCLUDE_PATH + "footer.html"
     );
+
+    initMobileSidebar();
 
 });
 
@@ -249,80 +240,87 @@ function loadFooterInformation(){
 
 /* =====================================================
    MOBILE SIDEBAR
+   EVENT DELEGATION
 ===================================================== */
 
 function initMobileSidebar(){
 
-    const menuButton =
-        document.getElementById("mobile-menu-btn");
+    document.addEventListener("click", function(event){
 
-    const sidebar =
-        document.querySelector(".sidebar");
+        /* ==========================================
+           TOMBOL HAMBURGER
+        ========================================== */
 
-    const overlay =
-        document.getElementById("sidebar-overlay");
+        const menuButton =
+            event.target.closest("#mobile-menu-btn");
+
+        if(menuButton){
+
+            const sidebar =
+                document.querySelector(".sidebar");
+
+            const overlay =
+                document.getElementById("sidebar-overlay");
+
+            if(sidebar){
+                sidebar.classList.add("mobile-open");
+            }
+
+            if(overlay){
+                overlay.classList.add("active");
+            }
+
+            return;
+        }
 
 
-    /* -----------------------------------------
-       CEK ELEMEN
-    ----------------------------------------- */
+        /* ==========================================
+           OVERLAY
+        ========================================== */
 
-    if(!menuButton || !sidebar || !overlay){
+        const overlay =
+            event.target.closest("#sidebar-overlay");
 
-        return;
+        if(overlay){
 
-    }
+            const sidebar =
+                document.querySelector(".sidebar");
+
+            if(sidebar){
+                sidebar.classList.remove("mobile-open");
+            }
+
+            overlay.classList.remove("active");
+
+            return;
+        }
 
 
-    /* -----------------------------------------
-       OPEN SIDEBAR
-    ----------------------------------------- */
+        /* ==========================================
+           MENU SIDEBAR
+        ========================================== */
 
-    menuButton.addEventListener("click", () => {
+        const sidebarLink =
+            event.target.closest(".sidebar a");
 
-        sidebar.classList.add("mobile-open");
+        if(sidebarLink){
 
-        overlay.classList.add("active");
+            const sidebar =
+                document.querySelector(".sidebar");
+
+            const overlay =
+                document.getElementById("sidebar-overlay");
+
+            if(sidebar){
+                sidebar.classList.remove("mobile-open");
+            }
+
+            if(overlay){
+                overlay.classList.remove("active");
+            }
+
+        }
 
     });
-
-
-    /* -----------------------------------------
-       CLOSE SIDEBAR
-    ----------------------------------------- */
-
-    function closeMobileSidebar(){
-
-        sidebar.classList.remove("mobile-open");
-
-        overlay.classList.remove("active");
-
-    }
-
-
-    /* -----------------------------------------
-       OVERLAY CLICK
-    ----------------------------------------- */
-
-    overlay.addEventListener(
-        "click",
-        closeMobileSidebar
-    );
-
-
-    /* -----------------------------------------
-       MENU CLICK
-    ----------------------------------------- */
-
-    sidebar
-        .querySelectorAll("a")
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                closeMobileSidebar
-            );
-
-        });
 
 }
