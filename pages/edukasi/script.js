@@ -1,17 +1,6 @@
-/* =====================================================
-   EMIS
-   MODUL EDUKASI & BERITA
-===================================================== */
-
-
-/* =====================================================
-   INITIALIZATION
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", init);
 
 let currentView = "gallery";
-
 
 function init() {
 
@@ -35,68 +24,53 @@ function init() {
 
 
 /* =====================================================
-   RENDER EXECUTIVE SUMMARY
+   SUMMARY
 ===================================================== */
 
 function renderSummary(){
 
-    const container =
-        document.getElementById("summary-grid");
+    const container = document.getElementById("summary-grid");
 
     if(!container) return;
 
+    container.innerHTML = EDUCATION_SUMMARY.map(item => `
 
-    container.innerHTML =
-        EDUCATION_SUMMARY.map(item => `
+        <div class="summary-card">
 
-            <div class="summary-card">
+            <div
+                class="summary-icon"
+                style="background:${item.color};"
+            >
 
-                <div
-                    class="summary-icon"
-                    style="background:${item.color};">
-
-                    <i class="${item.icon}"></i>
-
-                </div>
-
-
-                <div class="summary-info">
-
-                    <span>
-                        ${item.title}
-                    </span>
-
-
-                    <strong>
-                        ${item.value}
-                    </strong>
-
-
-                    <small>
-                        ${item.subtitle}
-                    </small>
-
-                </div>
+                <i class="${item.icon}"></i>
 
             </div>
 
-        `).join("");
+            <div class="summary-info">
+
+                <span>${item.title}</span>
+
+                <strong>${item.value}</strong>
+
+                <small>${item.subtitle}</small>
+
+            </div>
+
+        </div>
+
+    `).join("");
 
 }
 
 
 /* =====================================================
-   LOAD MODULE INFORMATION
+   MODULE INFORMATION
 ===================================================== */
 
-function loadModuleInformation() {
-
-
-    /* PAGE PERIOD */
+function loadModuleInformation(){
 
     const pagePeriod =
         document.getElementById("page-period");
-
 
     if(pagePeriod){
 
@@ -106,11 +80,8 @@ function loadModuleInformation() {
     }
 
 
-    /* HEADER UPDATE PERIOD */
-
     const updatePeriode =
         document.getElementById("update-periode");
-
 
     if(updatePeriode){
 
@@ -120,11 +91,8 @@ function loadModuleInformation() {
     }
 
 
-    /* EDUCATION COUNT */
-
     const dashboardCount =
         document.getElementById("dashboard-count");
-
 
     if(dashboardCount){
 
@@ -134,11 +102,8 @@ function loadModuleInformation() {
     }
 
 
-    /* NEWS COUNT */
-
     const newsCount =
         document.getElementById("news-count");
-
 
     if(newsCount){
 
@@ -148,8 +113,6 @@ function loadModuleInformation() {
     }
 
 
-    /* PAGE TITLE */
-
     document.title =
         `${PAGE_CONFIG.title} | EMIS`;
 
@@ -157,15 +120,13 @@ function loadModuleInformation() {
 
 
 /* =====================================================
-   RENDER EDUCATION DASHBOARDS
+   EDUCATION DASHBOARDS
 ===================================================== */
 
-function renderEducationDashboards(filter="all") {
-
+function renderEducationDashboards(filter="all"){
 
     const container =
         document.getElementById("education-dashboard");
-
 
     if(!container) return;
 
@@ -181,7 +142,9 @@ function renderEducationDashboards(filter="all") {
 
     const dashboards =
         filter === "all"
+
         ? EDUCATION_DASHBOARDS
+
         : EDUCATION_DASHBOARDS.filter(
             item => item.type === filter
         );
@@ -189,43 +152,31 @@ function renderEducationDashboards(filter="all") {
 
     dashboards.forEach(item => {
 
-
         container.innerHTML += `
 
             <article
                 class="viewer"
-                id="${item.type}-dashboard">
-
-
-                <!-- =================================
-                     VIEWER HEADER
-                ================================== -->
+                id="${item.type}-dashboard"
+            >
 
                 <div class="viewer-header">
 
-
                     <div class="viewer-title">
-
 
                         <div
                             class="viewer-icon"
-                            style="background:${item.color};">
+                            style="background:${item.color};"
+                        >
 
                             <i class="${item.icon}"></i>
 
                         </div>
 
-
                         <div>
 
-                            <h3>
-                                ${item.title}
-                            </h3>
+                            <h3>${item.title}</h3>
 
-
-                            <p>
-                                ${item.description}
-                            </p>
+                            <p>${item.description}</p>
 
                         </div>
 
@@ -234,43 +185,28 @@ function renderEducationDashboards(filter="all") {
 
                     <div class="viewer-period">
 
-                        <span>
-                            Periode
-                        </span>
+                        <span>Periode</span>
 
-
-                        <strong>
-                            ${item.period}
-                        </strong>
+                        <strong>${item.period}</strong>
 
                     </div>
 
-
                 </div>
 
-
-                <!-- =================================
-                     VIEWER IMAGE
-                ================================== -->
 
                 <div class="viewer-image">
 
                     <img
                         src="${item.image}"
-                        alt="${item.title}">
+                        alt="${item.title}"
+                    >
 
                 </div>
 
 
-                <!-- =================================
-                     VIEWER FOOTER
-                ================================== -->
-
                 <div class="viewer-footer">
 
-
                     <div class="viewer-meta">
-
 
                         <span>
 
@@ -298,7 +234,6 @@ function renderEducationDashboards(filter="all") {
 
                         </span>
 
-
                     </div>
 
 
@@ -306,7 +241,8 @@ function renderEducationDashboards(filter="all") {
                         href="${item.image}"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="viewer-button">
+                        class="viewer-button"
+                    >
 
                         ${item.button}
 
@@ -314,9 +250,7 @@ function renderEducationDashboards(filter="all") {
 
                     </a>
 
-
                 </div>
-
 
             </article>
 
@@ -328,11 +262,10 @@ function renderEducationDashboards(filter="all") {
 
 
 /* =====================================================
-   EDUCATION FILTER
+   EDUCATION TABS
 ===================================================== */
 
 function initTabs(){
-
 
     const tabs =
         document.querySelectorAll(".tab");
@@ -340,9 +273,7 @@ function initTabs(){
 
     tabs.forEach(tab => {
 
-
         tab.addEventListener("click", () => {
-
 
             tabs.forEach(t =>
                 t.classList.remove("active")
@@ -356,7 +287,6 @@ function initTabs(){
                 tab.dataset.filter
             );
 
-
         });
 
     });
@@ -365,11 +295,10 @@ function initTabs(){
 
 
 /* =====================================================
-   VIEW MODE
+   VIEWER MODE
 ===================================================== */
 
 function initViewerMode(){
-
 
     const buttons =
         document.querySelectorAll(".mode-btn");
@@ -377,9 +306,7 @@ function initViewerMode(){
 
     buttons.forEach(btn => {
 
-
         btn.addEventListener("click", () => {
-
 
             buttons.forEach(b =>
                 b.classList.remove("active")
@@ -395,7 +322,6 @@ function initViewerMode(){
 
             renderEducationDashboards();
 
-
         });
 
     });
@@ -404,11 +330,10 @@ function initViewerMode(){
 
 
 /* =====================================================
-   RENDER NEWS
+   NEWS
 ===================================================== */
 
 function renderNews(){
-
 
     const container =
         document.getElementById("news-container");
@@ -428,9 +353,7 @@ function renderNews(){
 
                 <i class="fa-solid fa-newspaper"></i>
 
-                <h3>
-                    Belum Ada Berita
-                </h3>
+                <h3>Belum Ada Berita</h3>
 
                 <p>
                     Berita terbaru akan ditampilkan
@@ -448,25 +371,28 @@ function renderNews(){
 
     NEWS_DATA.forEach(news => {
 
-
         container.innerHTML += `
 
             <article
                 class="news-card"
-                data-news-id="${news.id}">
-
-
-                <!-- =================================
-                     NEWS IMAGE
-                ================================== -->
+                data-news-id="${news.id}"
+            >
 
                 <div class="news-image">
+
+                    <div
+                        class="news-image-bg"
+                        style="
+                            background-image:url('${news.image}');
+                        "
+                    ></div>
 
 
                     <img
                         src="${news.image}"
                         alt="${news.title}"
-                        loading="lazy">
+                        loading="lazy"
+                    >
 
 
                     <span class="news-category">
@@ -475,16 +401,10 @@ function renderNews(){
 
                     </span>
 
-
                 </div>
 
 
-                <!-- =================================
-                     NEWS CONTENT
-                ================================== -->
-
                 <div class="news-content">
-
 
                     <div class="news-date">
 
@@ -511,7 +431,8 @@ function renderNews(){
 
                     <a
                         href="?berita=${encodeURIComponent(news.id)}"
-                        class="news-button">
+                        class="news-button"
+                    >
 
                         Baca Selengkapnya
 
@@ -519,9 +440,7 @@ function renderNews(){
 
                     </a>
 
-
                 </div>
-
 
             </article>
 
@@ -529,8 +448,6 @@ function renderNews(){
 
     });
 
-
-    /* UPDATE NEWS COUNT */
 
     const newsCount =
         document.getElementById("news-count");
@@ -547,11 +464,10 @@ function renderNews(){
 
 
 /* =====================================================
-   OPEN NEWS FROM QUERY
+   NEWS DETAIL FROM QUERY
 ===================================================== */
 
 function openNewsFromQuery(){
-
 
     const params =
         new URLSearchParams(
@@ -572,25 +488,19 @@ function openNewsFromQuery(){
         );
 
 
-    if(!news){
-
-        return;
-
-    }
+    if(!news) return;
 
 
     renderNewsDetail(news);
-
 
 }
 
 
 /* =====================================================
-   RENDER NEWS DETAIL
+   NEWS DETAIL
 ===================================================== */
 
 function renderNewsDetail(news){
-
 
     const newsContainer =
         document.getElementById("news-container");
@@ -609,13 +519,10 @@ function renderNewsDetail(news){
         <article class="news-detail">
 
 
-            <!-- =================================
-                 BACK BUTTON
-            ================================== -->
-
             <a
                 href="index.html"
-                class="news-back-button">
+                class="news-back-button"
+            >
 
                 <i class="fa-solid fa-arrow-left"></i>
 
@@ -624,28 +531,19 @@ function renderNewsDetail(news){
             </a>
 
 
-            <!-- =================================
-                 DETAIL IMAGE
-            ================================== -->
-
             <div class="news-detail-image">
 
                 <img
                     src="${news.image}"
-                    alt="${news.title}">
+                    alt="${news.title}"
+                >
 
             </div>
 
 
-            <!-- =================================
-                 DETAIL HEADER
-            ================================== -->
-
             <div class="news-detail-header">
 
-
                 <div class="news-detail-meta">
-
 
                     <span class="news-detail-category">
 
@@ -662,7 +560,6 @@ function renderNewsDetail(news){
 
                     </span>
 
-
                 </div>
 
 
@@ -672,13 +569,8 @@ function renderNewsDetail(news){
 
                 </h1>
 
-
             </div>
 
-
-            <!-- =================================
-                 DETAIL CONTENT
-            ================================== -->
 
             <div class="news-detail-content">
 
@@ -692,8 +584,6 @@ function renderNewsDetail(news){
     `;
 
 
-    /* SCROLL TO NEWS */
-
     setTimeout(() => {
 
         const section =
@@ -703,8 +593,11 @@ function renderNewsDetail(news){
         if(section){
 
             section.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+
+                behavior:"smooth",
+
+                block:"start"
+
             });
 
         }
