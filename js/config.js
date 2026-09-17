@@ -176,7 +176,7 @@ const MODULES = [
 
     {
         id: "edukasi",
-        title: "Edukasi",
+        title: "Edukasi & Berita",
         icon: "fa-solid fa-book-open",
         color: "#7C3AED",
         total: 15,

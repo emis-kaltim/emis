@@ -295,7 +295,7 @@ const NEWS_DATA = [
     category: "Konservasi Energi",
 
     image:
-        "/emis/img/berita/berita-001.jpg",
+        "/emis/img/berita/berita-001.png",
 
     excerpt:
         "Informasi mengenai penerapan konservasi energi dan efisiensi penggunaan energi pada Gedung A Sekretariat Daerah Provinsi Kalimantan Timur.",
@@ -341,7 +341,7 @@ const NEWS_DATA = [
     category: "Edukasi",
 
     image:
-        "/emis/img/berita/berita-002.jpg",
+        "/emis/img/berita/berita-002.png",
 
     excerpt:
         "Edukasi mengenai langkah sederhana dan penerapan efisiensi energi dalam mendukung operasional bangunan gedung yang lebih hemat energi.",
