@@ -17,7 +17,7 @@ const MONITORING_CONFIG = {
 
     subtitle: "Monitoring Operasional Gedung",
 
-    period: "Juli 2026",
+    period: "2026",
 
     totalDashboard: 2
 
@@ -42,7 +42,7 @@ const MONITORING_SUMMARY = [
         icon: "fa-solid fa-calendar-days",
         color: "#20C997",
         title: "Periode",
-        value: "Juli 2026",
+        value: "2026",
         subtitle: "Data terbaru"
     },
 
@@ -86,7 +86,7 @@ const MONITORING_DASHBOARDS = [
 
         category: "Monitoring",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -117,7 +117,7 @@ const MONITORING_DASHBOARDS = [
 
         category: "Monitoring",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 

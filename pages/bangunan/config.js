@@ -13,7 +13,7 @@ const BUILDING_CONFIG = {
 
     subtitle: "Dashboard Sistem Bangunan",
 
-    period: "Juli 2026",
+    period: "2026",
 
     totalDashboard: 5
 
@@ -45,7 +45,7 @@ const BUILDING_SUMMARY = [
 
         title: "Periode",
 
-        value: "Juli 2026",
+        value: "2026",
 
         subtitle: "Data terbaru"
     },
@@ -98,7 +98,7 @@ const BUILDING_DASHBOARDS = [
 
         category: "Sistem Bangunan",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -128,7 +128,7 @@ const BUILDING_DASHBOARDS = [
 
         category: "Sistem Bangunan",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -159,7 +159,7 @@ const BUILDING_DASHBOARDS = [
 
         category: "Sistem Bangunan",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -189,7 +189,7 @@ const BUILDING_DASHBOARDS = [
 
         category: "Sistem Bangunan",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -219,7 +219,7 @@ const BUILDING_DASHBOARDS = [
 
         category: "Sistem Bangunan",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 

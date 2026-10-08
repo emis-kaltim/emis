@@ -16,7 +16,7 @@ const ENERGY_CONFIG = {
 
     subtitle: "Dashboard dan Analisis Energi",
 
-    period: "Juli 2026",
+    period: "2026",
 
     totalDashboard: 5
 
@@ -41,7 +41,7 @@ const ENERGY_SUMMARY = [
         icon: "fa-solid fa-calendar-days",
         color: "#0D6EFD",
         title: "Periode",
-        value: "Juli 2026",
+        value: "2026",
         subtitle: "Data terbaru"
     },
 
@@ -86,7 +86,7 @@ const ENERGY_DASHBOARDS = [
 
         category: "Energi",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -117,7 +117,7 @@ const ENERGY_DASHBOARDS = [
 
         category: "Energi",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -148,7 +148,7 @@ const ENERGY_DASHBOARDS = [
 
         category: "Konservasi Energi",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -179,7 +179,7 @@ const ENERGY_DASHBOARDS = [
 
         category: "Analisis",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 
@@ -210,7 +210,7 @@ const ENERGY_DASHBOARDS = [
 
         category: "Laporan",
 
-        period: "Juli 2026",
+        period: "2026",
 
         pageSize: "Letter",
 

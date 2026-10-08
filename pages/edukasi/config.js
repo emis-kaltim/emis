@@ -290,7 +290,7 @@ const NEWS_DATA = [
     title:
         "Penerapan Konservasi Energi pada Gedung Sekretariat Daerah",
 
-    date: "01 Juli 2026",
+    date: "2026",
 
     category: "Konservasi Energi",
 
@@ -336,7 +336,7 @@ const NEWS_DATA = [
     title:
         "Edukasi Efisiensi Energi untuk Mendukung Bangunan Gedung Berkelanjutan",
 
-    date: "05 Juli 2026",
+    date: "2026",
 
     category: "Edukasi",
 

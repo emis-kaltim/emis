@@ -16,7 +16,7 @@ const SITE_CONFIG = {
 
     portalSubtitle: "Portal Informasi Manajemen Energi",
 
-    building: "Gedung A Sekretariat Daerah Provinsi Kalimantan Timur",
+    building: "Gedung Sekretariat Daerah Provinsi Kalimantan Timur",
 
     institution: "Biro Umum Sekretariat Daerah Provinsi Kalimantan Timur",
 
@@ -24,11 +24,11 @@ const SITE_CONFIG = {
 
     /* UPDATE */
 
-    updateMonth: "Juli",
+    updateMonth: "Oktober",
 
     updateYear: "2026",
 
-    updateDate: "01 Juli 2026",
+    updateDate: "8 Oktober 2026",
 
     /* COPYRIGHT */
 
@@ -134,7 +134,7 @@ const MODULES = [
         id: "energi",
         title: "Energi",
         icon: "fa-solid fa-bolt",
-        color: "#1B8A4B",
+        color: "#06f76e",
         total: 5,
         label: "Dashboard",
         description: "Konsumsi energi, IKE, analisis energi dan implementasi efisiensi.",
@@ -145,7 +145,7 @@ const MODULES = [
         id: "monitoring",
         title: "Monitoring",
         icon: "fa-solid fa-temperature-half",
-        color: "#0D6EFD",
+        color: "#00b7ff",
         total: 2,
         label: "Dashboard",
         description: "Operasional AC dan monitoring cuaca.",
@@ -156,7 +156,7 @@ const MODULES = [
         id: "bangunan",
         title: "Sistem Bangunan",
         icon: "fa-solid fa-building",
-        color: "#6C757D",
+        color: "#f4f6f8",
         total: 5,
         label: "Dashboard",
         description: "Tata cahaya, tata udara, transportasi, peralatan dan pemeliharaan.",
@@ -178,7 +178,7 @@ const MODULES = [
         id: "edukasi",
         title: "Edukasi & Berita",
         icon: "fa-solid fa-book-open",
-        color: "#7C3AED",
+        color: "#9458fd",
         total: 15,
         label: "Materi",
         description: "Poster, video, panduan dan materi konservasi energi.",
@@ -196,7 +196,7 @@ const QUICK_ACCESS = [
 {
     title:"Dashboard Energi",
     icon:"fa-solid fa-chart-line",
-    color:"#198754",
+    color:"#03fd6b",
     page:"pages/energi/index.html#konsumsi",
     description:"Dashboard konsumsi energi dan IKE."
 },
@@ -204,7 +204,7 @@ const QUICK_ACCESS = [
 {
     title:"Operasional AC",
     icon:"fa-solid fa-snowflake",
-    color:"#0D6EFD",
+    color:"#03adfc",
     page:"pages/monitoring/index.html#ac",
     description:"Monitoring operasional AC bulanan."
 },
@@ -212,7 +212,7 @@ const QUICK_ACCESS = [
 {
     title:"Monitoring Cuaca",
     icon:"fa-solid fa-cloud-sun",
-    color:"#20C997",
+    color:"#8cf8f8",
     page:"pages/monitoring/index.html#cuaca",
     description:"Data cuaca dan analisis lingkungan."
 },
@@ -220,7 +220,7 @@ const QUICK_ACCESS = [
 {
     title:"Laporan Bulanan",
     icon:"fa-solid fa-file-pdf",
-    color:"#DC3545",
+    color:"#f063f5",
     page:"pages/dokumen/index.html#laporan",
     description:"Laporan konservasi energi bulanan."
 },
@@ -236,7 +236,7 @@ const QUICK_ACCESS = [
 {
     title:"Sistem Bangunan",
     icon:"fa-solid fa-building",
-    color:"#6C757D",
+    color:"#e9eef3",
     page:"pages/bangunan/index.html",
     description:"Tata udara, tata cahaya dan peralatan."
 }
