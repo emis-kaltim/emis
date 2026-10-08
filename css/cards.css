@@ -58,7 +58,7 @@
 
 .update-box{
 
-    background:#F5FAF6;
+    background:#faf5f5;
     border-left:5px solid var(--primary);
     border-radius:12px;
     padding:18px 24px;
@@ -133,7 +133,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    background:rgba(25,135,84,.10);
+    background:rgba(135, 25, 25, 0.1);
     color:var(--primary);
     font-size:22px;
     margin-bottom:18px;

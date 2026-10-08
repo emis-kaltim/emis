@@ -83,7 +83,9 @@
 
     gap:12px;
 
-    background:#ffffff;
+    background:#ccf82c;
+
+    border:1px solid #000981;
 
     border-radius:14px;
 
@@ -109,7 +111,7 @@
 
     border-radius:50%;
 
-    background:rgba(27,138,75,.12);
+    background:rgb(15, 18, 207);
 
     color:var(--primary);
 
@@ -171,13 +173,13 @@ RESPONSIVE SECTION HEADER
 
 .module-card{
 
-    background:#ffffff;
+    background:#9ad6fc;
 
     border-radius:18px;
 
     padding:25px;
 
-    border:1px solid #E8ECEF;
+    border:1px solid #000407;
 
     transition:.3s;
 
@@ -197,7 +199,7 @@ RESPONSIVE SECTION HEADER
 
     transform:translateY(-6px);
 
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+    box-shadow:0 12px 25px rgba(10, 0, 0, 0.12);
 
 }
 
@@ -220,7 +222,7 @@ RESPONSIVE SECTION HEADER
 
     justify-content:center;
 
-    color:white;
+    color:rgb(14, 13, 0);
 
     font-size:24px;
 
@@ -239,7 +241,7 @@ RESPONSIVE SECTION HEADER
 
     margin-bottom:10px;
 
-    color:#1F2937;
+    color:#00030c;
 
 }
 
@@ -247,9 +249,9 @@ RESPONSIVE SECTION HEADER
 
     display:inline-block;
 
-    background:#F3F6F9;
+    background:#009107;
 
-    color:#495057;
+    color:#f5f7f8;
 
     padding:6px 12px;
 
@@ -265,7 +267,7 @@ RESPONSIVE SECTION HEADER
 
 .module-body p{
 
-    color:#6C757D;
+    color:#000508;
 
     line-height:1.7;
 
@@ -288,7 +290,7 @@ RESPONSIVE SECTION HEADER
 
     gap:10px;
 
-    color:#198754;
+    color:#051df3;
 
     text-decoration:none;
 
@@ -300,7 +302,7 @@ RESPONSIVE SECTION HEADER
 
 .module-link:hover{
 
-    color:#146C43;
+    color:#060af8;
 
 }
 
@@ -360,7 +362,7 @@ QUICK ACCESS
 
     min-height:190px;
 
-    border:1px solid #eef2f3;
+    border:1px solid #d104af;
 
 }
 
@@ -386,7 +388,7 @@ QUICK ACCESS
 
     align-items:center;
 
-    color:white;
+    color:rgb(28, 4, 247);
 
     font-size:28px;
 

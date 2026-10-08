@@ -10,7 +10,7 @@ SIDEBAR
 
     background:var(--primary);
 
-    color:white;
+    color:rgb(255, 255, 255);
 
     position:fixed;
 
@@ -26,7 +26,7 @@ SIDEBAR
 
     background:var(--primary);
 
-    color:#ffffff;
+    color:#faf9f9;
 
     border-radius:12px;
 
@@ -146,7 +146,7 @@ nav li:hover{
 
         overflow-y:auto;
 
-        box-shadow:4px 0 20px rgba(0,0,0,.15);
+        box-shadow:4px 0 20px rgba(7, 7, 7, 0.15);
 
     }
 

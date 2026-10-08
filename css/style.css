@@ -12,15 +12,15 @@ THEME
 
     --primary-dark:#07592f;
 
-    --background:#eef3ef;
+    --background:#ffffff;
 
-    --white:#ffffff;
+    --white:#fdfcfc;
 
-    --text:#222;
+    --text:#15006e;
 
-    --text-light:#666;
+    --text-light:#030000;
 
-    --border:#dce4dd;
+    --border:#000701;
 
     /* SHADOW */
 
@@ -56,7 +56,7 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:#eef3ef;
+    background:#fafafa00;
 
     display:flex;
 
@@ -110,7 +110,7 @@ EXECUTIVE KPI
 
     transform:translateY(-8px);
 
-    box-shadow:0 20px 45px rgba(0, 0, 0, 0.12);
+    box-shadow:0 20px 45px rgba(8, 8, 8, 0.12);
 
 }
 
@@ -179,7 +179,7 @@ EXECUTIVE KPI
 
     align-items:center;
 
-    background:#EAF7EF;
+    background:#f7eaea;
 
     color:var(--primary);
 
@@ -235,7 +235,7 @@ EXECUTIVE STATISTICS
 
 .stat-card{
 
-    background:#ffffff;
+    background:#ceffd6;
 
     border-radius:18px;
 
@@ -247,7 +247,9 @@ EXECUTIVE STATISTICS
 
     gap:18px;
 
-    box-shadow:0 8px 24px rgba(0,0,0,.06);
+    border:1px solid #050004;
+
+    box-shadow:0 8px 24px rgba(15, 0, 0, 0.06);
 
     transition:.25s;
 
@@ -273,7 +275,7 @@ EXECUTIVE STATISTICS
 
     align-items:center;
 
-    color:#fff;
+    color:#0a0a00;
 
     font-size:24px;
 
@@ -325,21 +327,21 @@ SEARCH DASHBOARD
 
     gap:12px;
 
-    background:#ffffff;
+    background:#fcfcfd;
 
-    border:1px solid #E5E7EB;
+    border:1px solid #0c00b3;
 
     border-radius:14px;
 
     padding:14px 18px;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.05);
+    box-shadow:0 6px 18px rgba(252, 1, 1, 0.05);
 
 }
 
 .search-box i{
 
-    color:#9CA3AF;
+    color:#050000;
 
 }
 
@@ -361,7 +363,7 @@ SEARCH DASHBOARD
 
     border-color:var(--primary);
 
-    box-shadow:0 0 0 4px rgba(25,135,84,.10);
+    box-shadow:0 0 0 4px rgba(0, 12, 7, 0.1);
 
 }
 
@@ -373,7 +375,7 @@ SEARCH DASHBOARD
 
     padding:70px 20px;
 
-    color:#9CA3AF;
+    color:#0a0a0a;
 
 }
 

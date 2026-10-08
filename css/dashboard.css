@@ -103,7 +103,7 @@ main{
 
     box-shadow:var(--shadow);
 
-    border:1px solid #ECECEC;
+    border:1px solid #010005;
 
     transition:.3s;
 
@@ -113,7 +113,7 @@ main{
 
     transform:translateY(-6px);
 
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+    box-shadow:0 12px 25px rgba(2, 0, 0, 0.12);
 
 }
 
@@ -130,7 +130,7 @@ main{
 
     overflow:hidden;
 
-    background:#F8F9FA;
+    background:#f6f7f8;
 
 }
 
@@ -206,7 +206,7 @@ main{
 
 .dashboard-meta span{
 
-    background:#F3F6F9;
+    background:#b69ff8;
 
     padding:6px 12px;
 
@@ -264,7 +264,7 @@ main{
 
 .dashboard-button:hover{
 
-    color:#146C43;
+    color:#190075;
 
 }
 
@@ -283,7 +283,7 @@ footer{
 
     text-align:center;
 
-    color:#777;
+    color:#080000;
 
     padding:30px;
 
