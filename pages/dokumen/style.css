@@ -352,8 +352,9 @@ color:#ffffff;
 }
 
 
+
 /* =====================================================
-IMAGE
+   PDF PREVIEW
 ===================================================== */
 
 .viewer-image{
@@ -364,17 +365,72 @@ IMAGE
 
 }
 
-.viewer-image img{
+.pdf-preview{
 
     width:100%;
+
+    height:650px;
+
+    overflow:hidden;
 
     border-radius:14px;
 
     border:1px solid #E5E7EB;
 
-    display:block;
+    background:#E9EEF5;
 
 }
+
+.pdf-preview iframe{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+    background:#ffffff;
+
+}
+
+/* =====================================================
+   PDF PREVIEW - TABLET
+===================================================== */
+
+@media(max-width:992px){
+
+    .pdf-preview{
+
+        height:550px;
+
+    }
+
+}
+
+/* =====================================================
+   PDF PREVIEW - MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .viewer-image{
+
+        padding:15px;
+
+    }
+
+    .pdf-preview{
+
+        height:450px;
+
+        border-radius:10px;
+
+    }
+
+}
+
 
 /* =====================================================
 FOOTER
