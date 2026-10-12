@@ -60,7 +60,7 @@ const DOCUMENT_DASHBOARDS = [
         title: "Surat Keputusan",
         icon: "fa-solid fa-gavel",
         color: "#0D6EFD",
-        pdf: "/emis/pdf/dashboard/sk.pdf",
+        pdf: "/emis/pdf/dashboard/surat-keputusan.pdf",
         category: "Dokumen",
         period: "2026",
         resolution: "PDF",
