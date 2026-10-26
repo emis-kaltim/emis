@@ -306,15 +306,15 @@ const EXECUTIVE_KPI = [
 const EXECUTIVE_STATS = [
 
     {
-        title:"Konsumsi Energi Berjalan 2026",
-        value:"581.155",
+        title:"Konsumsi Energi 2025",
+        value:"624.978",
         unit:"kWh",
         icon:"fa-solid fa-bolt",
         color:"#198754"
     },
 
     {
-        title:"IKE 2025 (Kategori Efisien",
+        title:"IKE 2025 (Kategori Efisien)",
         value:"105.73",
         unit:"kWh/m²",
         icon:"fa-solid fa-chart-line",
@@ -328,18 +328,44 @@ const EXECUTIVE_STATS = [
         icon:"fa-solid fa-leaf",
         color:"#20C997"
     },
+    
+    {
+        title: "Penurunan Emisi Karbon",
+        value: "121,55",
+        unit: "ton CO₂e",
+        icon: "fa-solid fa-leaf",
+        color: "#198754"
+    },
 
     {
-        title:"Operasional AC 2026 (jam)",
-        value:"158.493",
+        title:"Total Operasional AC 2025 (jam)",
+        value:"377.382",
         unit:"Jam",
         icon:"fa-solid fa-snowflake",
         color:"#0D6EFD"
     },
 
+    
+    {
+        title: "Durasi Operasional AC Sebelum 07.00 WITA",
+        value: "23.032",
+        unit: "jam",
+        icon: "fa-solid fa-sun",
+        color: "#0dedfd"
+    },
+
+    {
+        title: "Durasi Operasional AC Setelah 19.00 WITA",
+        value: "12.528",
+        unit: "jam",
+        icon: "fa-solid fa-moon",
+        color: "#5a2900"
+    },
+
+
     {
         title:"% Cuaca Memengaruhi Konsumsi Energi",
-        value:"75%",
+        value:"65%",
         unit:"%",
         icon:"fa-solid fa-temperature-half",
         color:"#FD7E14"
