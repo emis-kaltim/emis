@@ -13,16 +13,17 @@
     </title>
 
     <!-- CSS GLOBAL -->
-    <link rel="stylesheet" href="/emis/css/style.css">
-    <link rel="stylesheet" href="/emis/css/sidebar.css">
-    <link rel="stylesheet" href="/emis/css/header.css">
-    <link rel="stylesheet" href="/emis/css/dashboard.css">
-    <link rel="stylesheet" href="/emis/css/cards.css">
-    <link rel="stylesheet" href="/emis/css/components.css">
-    <link rel="stylesheet" href="/emis/css/responsive.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/cards.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
 
     <!-- CSS MODUL -->
     <link rel="stylesheet" href="style.css">
+
 
     <!-- GOOGLE FONT -->
     <link rel="preconnect"
@@ -131,11 +132,100 @@
                 </div>
 
             </section>
+            
+            <!-- ==========================================
+                 EXECUTIVE ENERGY PERFORMANCE
+            ========================================== -->
 
+            <section class="executive-energy-section">
 
+                <div class="section-header">
 
+                    <div class="section-info">
 
+                        <span class="section-label">
+                            EXECUTIVE PERFORMANCE
+                        </span>
 
+                        <h2>
+                            Kinerja Konsumsi Energi
+                        </h2>
+
+                        <p>
+                            Perbandingan konsumsi listrik tahun berjalan
+                            terhadap periode yang sama pada tahun baseline.
+                        </p>
+
+                    </div>
+
+                    <div class="section-badge">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span id="executive-period">
+                            Memuat data...
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- STATUS PEMUATAN DATA -->
+
+                <div id="executive-status" class="executive-status">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i>
+                    Memuat data kinerja energi...
+                </div>
+
+                <!-- GRAFIK PERBANDINGAN BULANAN -->
+
+                <div class="executive-chart-card">
+
+                    <div class="executive-chart-header">
+
+                        <div>
+                            <h3>Tren Konsumsi Listrik Bulanan</h3>
+
+                            <p>
+                                Perbandingan baseline 2025 dengan realisasi 2026
+                            </p>
+                        </div>
+
+                        <div class="executive-chart-legend">
+
+                            <span>
+                                <i class="legend-dot baseline"></i>
+                                2025
+                            </span>
+
+                            <span>
+                                <i class="legend-dot current"></i>
+                                2026
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="executive-monthly-chart"
+                        class="executive-monthly-chart">
+
+                        <p class="chart-placeholder">
+                            Grafik akan ditampilkan setelah data berhasil dimuat.
+                        </p>
+
+                    </div>
+
+                    <div class="executive-chart-note">
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+                            Bulan yang belum memiliki data realisasi tidak
+                            ditampilkan sebagai konsumsi nol.
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
 
             <!-- ===========================
                  DASHBOARD
@@ -163,7 +253,7 @@
 
                             Dashboard diperbarui setiap bulan
                             dan menjadi media informasi utama
-                            konservasi energi Gedung A.
+                            konservasi energi Gedung Setda Prov. Kaltim.
 
                         </p>
 
@@ -286,25 +376,27 @@
 
     </div>
 
-    <!-- CONFIG -->
-    <script src="/emis/js/config.js"></script>
+    <!-- CONFIG GLOBAL -->
+    <script src="../../js/config.js"></script>
 
     <!-- PATH INCLUDE -->
     <script>
-
-    const INCLUDE_PATH = "../../includes/";
-
+        const INCLUDE_PATH = "../../includes/";
     </script>
 
     <!-- LOADER -->
-    <script src="/emis/js/loader.js"></script>
+    <script src="../../js/loader.js"></script>
 
-    <!-- MODUL -->
+    <!-- CONFIG MODUL -->
     <script src="config.js"></script>
 
-    <script src="/emis/js/dashboard-router.js"></script>
+    <!-- DASHBOARD ROUTER -->
+    <script src="../../js/dashboard-router.js"></script>
 
+    <!-- SCRIPT MODUL -->
     <script src="script.js"></script>
+    </body>
+    </html>
 
 </body>
 

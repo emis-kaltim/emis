@@ -841,3 +841,189 @@ margin:auto;
 box-shadow:0 15px 40px rgba(0,0,0,.12);
 
 }
+
+
+/* =====================================================
+   EXECUTIVE ENERGY PERFORMANCE
+===================================================== */
+
+.executive-energy-section {
+    margin: 10px 0 45px;
+}
+
+.executive-energy-section .section-header {
+    margin-bottom: 25px;
+}
+
+.executive-energy-section .section-info h2 {
+    color: var(--text);
+    margin: 8px 0 10px;
+}
+
+.executive-energy-section .section-info p {
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 760px;
+}
+
+.executive-status {
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    border: 1px solid #E5EAF0;
+    border-radius: 12px;
+    background: #F8FAFC;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.executive-status.success {
+    background: #EFF8F1;
+    border-color: #D5EAD9;
+    color: #267443;
+}
+
+.executive-status.warning {
+    background: #FFF8E8;
+    border-color: #F3E2B5;
+    color: #8A6417;
+}
+
+.executive-status.error {
+    background: #FFF1F0;
+    border-color: #F4D0CC;
+    color: #B42318;
+}
+
+/* CHART CARD */
+
+.executive-chart-card {
+    background: #FFFFFF;
+    border: 1px solid #EDF2F7;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.executive-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.executive-chart-header h3 {
+    color: var(--text);
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.executive-chart-header p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.executive-chart-legend {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.executive-chart-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-dot.baseline {
+    background: #94A3B8;
+}
+
+.legend-dot.current {
+    background: #16805D;
+}
+
+/* MONTHLY CHART CONTAINER */
+
+.executive-monthly-chart {
+    width: 100%;
+    min-height: 300px;
+    overflow-x: auto;
+}
+
+.executive-monthly-chart svg {
+    display: block;
+    width: 100%;
+    min-width: 560px;
+    height: auto;
+}
+
+.chart-placeholder {
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 14px;
+    text-align: center;
+    padding: 25px;
+}
+
+.executive-chart-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-top: 1px solid #EDF2F7;
+    padding-top: 18px;
+    margin-top: 20px;
+    color: var(--text-light);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.executive-chart-note i {
+    color: var(--primary);
+    margin-top: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .executive-energy-section {
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+
+    .executive-chart-card {
+        padding: 20px 15px;
+        border-radius: 14px;
+    }
+
+    .executive-chart-header h3 {
+        font-size: 18px;
+    }
+
+    .executive-chart-legend {
+        gap: 14px;
+    }
+
+    .executive-monthly-chart {
+        min-height: 240px;
+    }
+}
