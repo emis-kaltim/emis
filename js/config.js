@@ -372,6 +372,14 @@ const EXECUTIVE_STATS = [
     },
 
     {
+        title: "Jumlah Kegiatan Rapat 2025",
+        value: "220",
+        unit: "Kegiatan",
+        icon: "fa-solid fa-people-group",
+        color: "#6F42C1"
+    },
+
+    {
         title:"Dashboard",
         value:DASHBOARDS.length,
         unit:"Aktif",
