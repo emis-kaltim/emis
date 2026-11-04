@@ -334,7 +334,7 @@ const EXECUTIVE_STATS = [
         value: "Rp201.335.942",
         unit: "Rupiah/Tahun",
         icon: "fa-solid fa-money-bill-wave",
-        color: "#e0f7ec"
+        color: "#00a153"
     },
 
     {
