@@ -328,7 +328,15 @@ const EXECUTIVE_STATS = [
         icon:"fa-solid fa-leaf",
         color:"#20C997"
     },
-    
+
+    {
+        title: "Penghematan Biaya Energi 2025",
+        value: "Rp201.335.942",
+        unit: "Rupiah/Tahun",
+        icon: "fa-solid fa-money-bill-wave",
+        color: "#e0f7ec"
+    },
+
     {
         title: "Penurunan Emisi Karbon",
         value: "121,55",
