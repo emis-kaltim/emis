@@ -227,6 +227,135 @@
 
             </section>
 
+            
+            <!-- =====================================================
+                ANALISIS KONSUMSI ENERGI DENGAN DAN TANPA VIDEOTRON
+            ====================================================== -->
+
+            <section class="videotron-analysis-section">
+
+                <div class="videotron-analysis-header">
+                    <div>
+                        <span class="videotron-analysis-label">
+                            SUPPLEMENTARY ENERGY ANALYSIS
+                        </span>
+
+                        <h2>Analisis Konsumsi Energi dan Videotron</h2>
+
+                        <p>
+                            Perbandingan kinerja konsumsi listrik dengan
+                            dan tanpa memperhitungkan penggunaan energi videotron.
+                        </p>
+                    </div>
+
+                    <div class="videotron-period-badge" id="videotron-period">
+                        Memuat periode...
+                    </div>
+                </div>
+
+                <div class="videotron-analysis-note">
+                    <i class="fas fa-info-circle"></i>
+                    <span>
+                        Analisis tanpa videotron merupakan perhitungan tambahan
+                        untuk melihat kinerja konsumsi energi gedung di luar
+                        penggunaan videotron. Pelaporan konsumsi listrik utama
+                        tetap menggunakan total energi termasuk videotron.
+                    </span>
+                </div>
+
+                <!-- KPI PERBANDINGAN -->
+                <div class="videotron-kpi-grid" id="videotron-kpi-grid">
+
+                    <div class="videotron-loading">
+                        Memuat analisis konsumsi energi...
+                    </div>
+
+                </div>
+
+                <!-- GRAFIK PERBANDINGAN -->
+                <div class="videotron-chart-card">
+
+                    <div class="videotron-chart-header">
+                        <div>
+                            <h3>Tren Konsumsi Energi Bulanan</h3>
+                            <p>
+                                Perbandingan periode yang sama antara tahun 2025 dan 2026.
+                            </p>
+                        </div>
+
+                        <div class="videotron-chart-legend">
+
+                            <span>
+                                <i class="legend-line baseline"></i>
+                                2025 (Baseline)
+                            </span>
+
+                            <span>
+                                <i class="legend-line primary"></i>
+                                2026 (Dengan Videotron)
+                            </span>
+
+                            <span>
+                                <i class="legend-line adjusted"></i>
+                                2026 (Tanpa Videotron)
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div
+                        id="videotron-comparison-chart"
+                        class="videotron-comparison-chart"
+                    >
+                        <div class="videotron-loading">
+                            Menyiapkan grafik...
+                        </div>
+                    </div>
+
+                    <div class="videotron-chart-footnote">
+                        <i class="fas fa-chart-line"></i>
+                        <span id="videotron-chart-description">
+                            Grafik menggunakan periode data aktual yang tersedia
+                            pada kedua dataset.
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- METODOLOGI -->
+                <div class="videotron-methodology">
+
+                    <div class="videotron-methodology-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <h3>Metodologi Perhitungan</h3>
+
+                        <p>
+                            Persentase perubahan konsumsi dihitung dengan
+                            membandingkan total kWh periode berjalan terhadap
+                            periode yang sama pada tahun 2025.
+                        </p>
+
+                        <p>
+                            Penghematan tanpa videotron dihitung dari selisih
+                            konsumsi baseline 2025 dengan konsumsi 2026 setelah
+                            dikurangi energi videotron.
+                        </p>
+
+                        <p class="videotron-methodology-formula">
+                            Penghematan (%) =
+                            (Baseline 2025 - Konsumsi 2026 tanpa videotron)
+                            / Baseline 2025 × 100%
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
             <!-- ===========================
                  DASHBOARD
             ============================ -->
@@ -395,6 +524,8 @@
 
     <!-- SCRIPT MODUL -->
     <script src="script.js"></script>
+
+    <script src="./videotron-analysis.js"></script>
     </body>
     </html>
 
