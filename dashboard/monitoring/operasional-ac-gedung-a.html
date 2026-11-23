@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Monitoring Durasi Operasional AC | Gedung A - Fresh</title>
+<style>
+:root{--ink:#172334;--muted:#66758a;--line:#e6ebf1;--soft:#f6f8fb;--blue:#2563eb;--teal:#0f9d8a;--orange:#e58b27;--purple:#8064c8;--red:#d65b5b;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#ffffff;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;font-size:14px}
+.wrap{max-width:1440px;margin:auto;padding:28px 30px 36px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;background:#eef5ff;color:#315f9d;padding:6px 10px;border-radius:20px;margin-bottom:10px;font-size:11px;font-weight:750;letter-spacing:1.3px;color:#54708f;text-transform:uppercase;margin-bottom:8px}
+h1{font-size:26px;line-height:1.2;margin:0 0 8px;font-weight:750;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:13px;line-height:1.5}
+.header-tag{background:linear-gradient(135deg,#eef5ff,#f4efff);border:1px solid #e3e9f5;padding:9px 13px;border-radius:10px;color:#486078;font-size:12px;font-weight:700;white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:end;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 17px;margin-bottom:18px;box-shadow:0 2px 8px #24344b08}
+.filter{display:flex;flex-direction:column;gap:6px;min-width:155px}.filter label{font-size:11px;color:var(--muted);font-weight:700}
+select,button{font:inherit}select{height:37px;border:1px solid #dce3ec;border-radius:8px;background:#fff;padding:0 30px 0 10px;color:var(--ink);outline:none}
+button{height:37px;border:1px solid #dce3ec;border-radius:8px;background:#fff;padding:0 13px;color:#42556d;cursor:pointer}button:hover{background:#f4f7fb}
+.filter-note{margin-left:auto;color:#7a8798;font-size:11px;padding-bottom:9px}
+.grid{display:grid;gap:15px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:15px}
+.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px 18px;box-shadow:0 5px 18px #24344b0a;min-width:0}
+.kpi-card{position:relative;overflow:hidden;border-top:3px solid var(--accent,#2563eb)}
+.kpi-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px}
+.kpi-label{color:#6b7a8d;font-size:11px;font-weight:750;letter-spacing:.35px;margin:0}
+.kpi-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:19px;background:var(--tint,#edf4ff);color:var(--accent,#2563eb);flex:none}
+.kpi-value{font-size:25px;font-weight:760;letter-spacing:-.5px;line-height:1.15}.kpi-unit{font-size:11px;color:#8290a2;margin-top:6px}.kpi-foot{font-size:11px;color:#7b899a;margin-top:10px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.section-title{font-size:15px;font-weight:750;margin:0 0 4px}.section-desc{font-size:11px;color:var(--muted);line-height:1.4}
+.two{grid-template-columns:1.55fr 1fr;margin-bottom:15px}.three{grid-template-columns:1fr 1fr 1fr;margin-bottom:15px}
+.chartbox{height:260px;position:relative}.chartbox canvas{width:100%;height:100%;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#68778a;margin-top:8px}.legend span{display:inline-flex;align-items:center;gap:6px}.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.insight{border-left:3px solid #8aa7d8;padding:9px 12px;background:#f8faff;border-radius:0 8px 8px 0;color:#50627a;font-size:12px;line-height:1.55;margin-top:12px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:900px;font-size:12px}
+th{background:#f7f9fc;color:#65758a;font-weight:700;text-align:right;padding:11px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,th:nth-child(2){text-align:left}
+td{padding:11px 12px;border-bottom:1px solid #edf0f4;text-align:right;white-space:nowrap;color:#34445a}
+td:first-child,td:nth-child(2){text-align:left}tr:last-child td{border-bottom:0}tbody tr:hover{background:#fafcff}
+.status{display:inline-block;padding:4px 8px;border-radius:20px;font-size:10px;font-weight:750;background:#e9f7f2;color:#138264}
+.status.pending{background:#fff4e5;color:#a56a18}.status.check{background:#fff0f0;color:#b94c4c}
+.positive{color:#16856e!important}.negative{color:#c15b54!important}.muted{color:#9aa5b3!important}
+.table-meta{display:flex;justify-content:space-between;gap:12px;color:#7c8999;font-size:11px;margin-top:10px}
+footer{color:#8995a4;font-size:11px;line-height:1.6;margin-top:18px;border-top:1px solid var(--line);padding-top:13px}
+.empty{height:100%;display:flex;align-items:center;justify-content:center;color:#8a96a6;font-size:12px}
+@media(max-width:950px){.kpis{grid-template-columns:repeat(2,1fr)}.two,.three{grid-template-columns:1fr}.wrap{padding:20px 15px}}
+@media(max-width:560px){header{display:block}h1{font-size:22px}.header-tag{display:inline-block;margin-top:12px}.kpis{grid-template-columns:1fr 1fr}.kpi-value{font-size:20px}.filter{flex:1;min-width:130px}.filter-note{width:100%;margin:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div><div class="eyebrow">Biro Umum · Sekretariat Daerah Provinsi Kalimantan Timur</div>
+ <h1>Monitoring Durasi Operasional AC</h1>
+ <div class="sub">Gedung A Setda Provinsi Kalimantan Timur<br>Dashboard pemantauan pola dan intensitas operasional AC</div></div>
+ <div class="header-tag">DATA MONITORING · 2025–2026</div>
+</header>
+<section class="filters">
+ <div class="filter"><label for="yearFilter">TAHUN</label><select id="yearFilter"><option value="all">Semua Tahun</option><option value="2025">2025</option><option value="2026">2026</option></select></div>
+ <div class="filter"><label for="monthFilter">BULAN</label><select id="monthFilter"><option value="all">Semua Bulan</option></select></div>
+ <button id="resetBtn">Reset Filter</button>
+ <div class="filter-note" id="filterNote">Menampilkan seluruh periode yang tersedia</div>
+</section>
+<section class="grid kpis">
+ <div class="card kpi-card" style="--accent:#2563eb;--tint:#eaf1ff"><div class="kpi-top"><div class="kpi-label">TOTAL DURASI OPERASIONAL AC</div><div class="kpi-icon" aria-hidden="true">⏱</div></div><div class="kpi-value" id="kpiTotal">–</div><div class="kpi-unit">jam akumulasi pada periode terpilih</div><div class="kpi-foot" id="kpiTotalFoot"></div></div>
+ <div class="card kpi-card" style="--accent:#0f9d8a;--tint:#e5f7f3"><div class="kpi-top"><div class="kpi-label">RATA-RATA DURASI PER HARI KERJA</div><div class="kpi-icon" aria-hidden="true">📅</div></div><div class="kpi-value" id="kpiDaily">–</div><div class="kpi-unit">jam/hari kerja</div><div class="kpi-foot" id="kpiDays"></div></div>
+ <div class="card kpi-card" style="--accent:#8064c8;--tint:#f1edff"><div class="kpi-top"><div class="kpi-label">JUMLAH BULAN DATA LENGKAP</div><div class="kpi-icon" aria-hidden="true">✓</div></div><div class="kpi-value" id="kpiMonths">–</div><div class="kpi-unit">bulan berstatus lengkap</div><div class="kpi-foot" id="kpiPending"></div></div>
+ <div class="card kpi-card" style="--accent:#e58b27;--tint:#fff3e3"><div class="kpi-top"><div class="kpi-label">RATA-RATA RASIO RAPAT</div><div class="kpi-icon" aria-hidden="true">👥</div></div><div class="kpi-value" id="kpiMeetingRatio">–</div><div class="kpi-unit">proporsi durasi rapat terhadap total durasi AC</div><div class="kpi-foot">Dihitung dari akumulasi periode terpilih</div></div>
+</section>
+<section class="grid two">
+ <div class="card"><div class="section-head"><div><h2 class="section-title">📈 &nbsp; Tren Total Durasi Operasional AC</h2><div class="section-desc">Perkembangan akumulasi durasi per bulan · satuan jam</div></div></div><div class="chartbox"><canvas id="trendChart"></canvas></div><div class="legend" id="trendLegend"></div></div>
+ <div class="card"><div class="section-head"><div><h2 class="section-title">🎯 &nbsp; Komposisi Indikator Durasi</h2><div class="section-desc">Rasio Pre-OP, Post-OP, dan Rapat terhadap total durasi AC</div></div></div><div class="chartbox"><canvas id="mixChart"></canvas></div><div class="legend"><span><i class="dot" style="background:#2563eb"></i>Pre-OP</span><span><i class="dot" style="background:#0f9d8a"></i>Post-OP</span><span><i class="dot" style="background:#e58b27"></i>Rapat</span></div><div class="insight" id="mixInsight">–</div></div>
+</section>
+<section class="grid two">
+ <div class="card"><div class="section-head"><div><h2 class="section-title">↕️ &nbsp; Perbandingan Total Durasi YoY</h2><div class="section-desc">Perubahan 2026 dibanding bulan yang sama pada 2025</div></div></div><div class="chartbox"><canvas id="yoyChart"></canvas></div><div class="insight" id="yoyInsight">–</div></div>
+ <div class="card"><div class="section-head"><div><h2 class="section-title">📊 &nbsp; Rata-rata Durasi Harian</h2><div class="section-desc">Total durasi dibagi jumlah hari kerja aktual</div></div></div><div class="chartbox"><canvas id="dailyChart"></canvas></div><div class="legend"><span><i class="dot" style="background:#2563eb"></i>2025</span><span><i class="dot" style="background:#0f9d8a"></i>2026</span></div></div>
+</section>
+<section class="card">
+ <div class="section-head"><div><h2 class="section-title">🗂️ &nbsp; Data Monitoring Bulanan</h2><div class="section-desc">Nilai sumber dan indikator operasional berdasarkan filter aktif</div></div></div>
+ <div class="table-wrap"><table><thead><tr><th>Bulan</th><th>Tahun</th><th>Total Durasi AC (jam)</th><th>Rata-rata Harian</th><th>Pre-OP</th><th>Post-OP</th><th>Rapat</th><th>Hari Kerja</th><th>Rasio Rapat</th><th>Status</th></tr></thead><tbody id="dataBody"></tbody></table></div>
+ <div class="table-meta"><span id="tableCount">–</span><span>Durasi dalam jam · rata-rata dalam jam/hari kerja</span></div>
+</section>
+<footer><strong>Catatan metodologi:</strong> Durasi AC merupakan indikator operasional, bukan ukuran konsumsi energi listrik langsung. Kenaikan atau penurunan durasi tidak otomatis menunjukkan kenaikan atau penghematan energi. Pre-OP, Post-OP, dan Rapat ditampilkan sebagai indikator terpisah terhadap Total_Durasi_AC, bukan komponen penjumlahan total. Bulan berstatus BELUM INPUT tidak dihitung sebagai nol aktual.<br>Sumber data: Data_Monitoring.xlsx · Sheet Mon_AC. Dashboard berjalan lokal tanpa koneksi internet.</footer>
+</div>
+<script>
+const DATA = [{"no": 1, "year": 2025, "monthNo": 1, "month": "Januari", "total": 23951.0, "pre": 1211.0, "post": 459.0, "meeting": 1991.0, "workdays": 19, "status": "LENGKAP"}, {"no": 2, "year": 2025, "monthNo": 2, "month": "Februari", "total": 29234.0, "pre": 1440.0, "post": 746.0, "meeting": 1592.0, "workdays": 20, "status": "LENGKAP"}, {"no": 3, "year": 2025, "monthNo": 3, "month": "Maret", "total": 28994.0, "pre": 1857.0, "post": 945.0, "meeting": 2325.0, "workdays": 19, "status": "LENGKAP"}, {"no": 4, "year": 2025, "monthNo": 4, "month": "April", "total": 30650.0, "pre": 1288.0, "post": 1015.0, "meeting": 3326.0, "workdays": 16, "status": "LENGKAP"}, {"no": 5, "year": 2025, "monthNo": 5, "month": "Mei", "total": 30262.0, "pre": 1808.0, "post": 1153.0, "meeting": 2831.0, "workdays": 17, "status": "LENGKAP"}, {"no": 6, "year": 2025, "monthNo": 6, "month": "Juni", "total": 28560.0, "pre": 2046.0, "post": 785.0, "meeting": 2017.0, "workdays": 18, "status": "LENGKAP"}, {"no": 7, "year": 2025, "monthNo": 7, "month": "Juli", "total": 36288.0, "pre": 2511.0, "post": 1319.0, "meeting": 2573.0, "workdays": 23, "status": "LENGKAP"}, {"no": 8, "year": 2025, "monthNo": 8, "month": "Agustus", "total": 32235.0, "pre": 2001.0, "post": 1383.0, "meeting": 2526.0, "workdays": 20, "status": "LENGKAP"}, {"no": 9, "year": 2025, "monthNo": 9, "month": "September", "total": 32766.0, "pre": 2014.0, "post": 1010.0, "meeting": 2207.0, "workdays": 21, "status": "LENGKAP"}, {"no": 10, "year": 2025, "monthNo": 10, "month": "Oktober", "total": 36747.0, "pre": 2273.0, "post": 520.0, "meeting": 2329.0, "workdays": 23, "status": "LENGKAP"}, {"no": 11, "year": 2025, "monthNo": 11, "month": "November", "total": 33872.0, "pre": 2234.0, "post": 2032.0, "meeting": 2969.0, "workdays": 20, "status": "LENGKAP"}, {"no": 12, "year": 2025, "monthNo": 12, "month": "Desember", "total": 33824.0, "pre": 2348.0, "post": 1161.0, "meeting": 2916.0, "workdays": 21, "status": "LENGKAP"}, {"no": 13, "year": 2026, "monthNo": 1, "month": "Januari", "total": 31234.0, "pre": 2250.0, "post": 983.0, "meeting": 2366.0, "workdays": 20, "status": "LENGKAP"}, {"no": 14, "year": 2026, "monthNo": 2, "month": "Februari", "total": 24759.0, "pre": 1799.0, "post": 634.0, "meeting": 2269.0, "workdays": 15, "status": "LENGKAP"}, {"no": 15, "year": 2026, "monthNo": 3, "month": "Maret", "total": 17046.0, "pre": 1155.0, "post": 495.0, "meeting": 1627.0, "workdays": 12, "status": "LENGKAP"}, {"no": 16, "year": 2026, "monthNo": 4, "month": "April", "total": 26780.0, "pre": 1748.0, "post": 527.0, "meeting": 2793.0, "workdays": 18, "status": "LENGKAP"}, {"no": 17, "year": 2026, "monthNo": 5, "month": "Mei", "total": 18035.0, "pre": 935.0, "post": 240.0, "meeting": 1904.0, "workdays": 13, "status": "LENGKAP"}, {"no": 18, "year": 2026, "monthNo": 6, "month": "Juni", "total": 21687.0, "pre": 1104.0, "post": 111.0, "meeting": 1987.0, "workdays": 16, "status": "LENGKAP"}, {"no": 19, "year": 2026, "monthNo": 7, "month": "Juli", "total": 25004.0, "pre": 1570.0, "post": 477.0, "meeting": 3023.0, "workdays": 18, "status": "LENGKAP"}, {"no": 20, "year": 2026, "monthNo": 8, "month": "Agustus", "total": 28819.0, "pre": 975.0, "post": 645.0, "meeting": 3421.0, "workdays": 15, "status": "LENGKAP"}, {"no": 21, "year": 2026, "monthNo": 9, "month": "September", "total": 24050.0, "pre": 1162.0, "post": 349.0, "meeting": 2029.0, "workdays": 18, "status": "LENGKAP"}, {"no": 22, "year": 2026, "monthNo": 10, "month": "Oktober", "total": 23983.0, "pre": 1160.0, "post": 573.0, "meeting": 2202.0, "workdays": 17, "status": "LENGKAP"}, {"no": 23, "year": 2026, "monthNo": 11, "month": "November", "total": 0.0, "pre": 0.0, "post": 0.0, "meeting": 0.0, "workdays": 0, "status": "BELUM INPUT"}, {"no": 24, "year": 2026, "monthNo": 12, "month": "Desember", "total": 0.0, "pre": 0.0, "post": 0.0, "meeting": 0.0, "workdays": 0, "status": "BELUM INPUT"}];
+const MONTHS = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+const COLORS = {2025:"#2563eb",2026:"#0f9d8a",pre:"#2563eb",post:"#0f9d8a",meeting:"#e58b27"};
+const $ = id => document.getElementById(id);
+const fmt = (v,d=0) => Number(v).toLocaleString("id-ID",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct = v => (v*100).toLocaleString("id-ID",{minimumFractionDigits:2,maximumFractionDigits:2})+"%";
+const complete = d => d.status==="LENGKAP" && d.workdays>0 && d.total>0;
+const validRows = DATA.filter(complete);
+function init(){
+ const m=$("monthFilter");
+ MONTHS.forEach((name,i)=>{let o=document.createElement("option");o.value=String(i+1);o.textContent=name;m.appendChild(o)});
+ $("yearFilter").addEventListener("change",render);m.addEventListener("change",render);
+ $("resetBtn").addEventListener("click",()=>{$("yearFilter").value="all";m.value="all";render()});
+ render();
+}
+function selected(){
+ const y=$("yearFilter").value, mo=$("monthFilter").value;
+ return DATA.filter(d=>(y==="all"||String(d.year)===y)&&(mo==="all"||String(d.monthNo)===mo));
+}
+function render(){
+ const rows=selected(), done=rows.filter(complete), total=done.reduce((a,d)=>a+d.total,0), days=done.reduce((a,d)=>a+d.workdays,0);
+ const pre=done.reduce((a,d)=>a+d.pre,0),post=done.reduce((a,d)=>a+d.post,0),meeting=done.reduce((a,d)=>a+d.meeting,0);
+ $("kpiTotal").textContent=fmt(total);$("kpiDaily").textContent=days?fmt(total/days,2):"–";
+ $("kpiMonths").textContent=fmt(done.length);$("kpiPending").textContent=rows.filter(d=>d.status==="BELUM INPUT").length+" bulan belum input dalam filter";
+ $("kpiTotalFoot").textContent=done.length?done.length+" bulan valid":"Tidak ada data lengkap pada filter";
+ $("kpiDays").textContent=fmt(days)+" hari kerja terakumulasi";
+ $("kpiMeetingRatio").textContent=total?pct(meeting/total):"–";
+ const year=$("yearFilter").value, month=$("monthFilter").value;
+ $("filterNote").textContent=(year==="all"?"Semua tahun":year)+" · "+(month==="all"?"Semua bulan":MONTHS[Number(month)-1]);
+ renderTrend(rows);renderMix(pre,post,meeting,total);renderYoY(rows);renderDaily(rows);renderTable(rows);
+}
+function canvasSetup(id){
+ const c=$(id), rect=c.getBoundingClientRect(), w=Math.max(280,rect.width),h=Math.max(190,rect.height),dpr=window.devicePixelRatio||1;
+ c.width=w*dpr;c.height=h*dpr;const ctx=c.getContext("2d");ctx.scale(dpr,dpr);return {ctx,w,h};
+}
+function baseChart(ctx,w,h){
+ ctx.clearRect(0,0,w,h);ctx.font="10px Segoe UI,Arial";ctx.fillStyle="#8290a2";ctx.strokeStyle="#edf0f4";ctx.lineWidth=1;
+}
+function lineChart(id,series,labels,opts={}){
+ const {ctx,w,h}=canvasSetup(id);baseChart(ctx,w,h);
+ const left=48,right=12,top=15,bottom=32,pw=w-left-right,ph=h-top-bottom;
+ const vals=series.flatMap(s=>s.values.filter(v=>v!==null&&Number.isFinite(v)));
+ if(!vals.length){ctx.fillText("Belum ada data untuk ditampilkan",left, h/2);return}
+ let min=opts.min!==undefined?opts.min:Math.min(0,...vals),max=opts.max!==undefined?opts.max:Math.max(...vals);
+ if(max===min)max=min+1;const pad=(max-min)*.08;max+=pad;if(min<0)min-=pad;
+ for(let i=0;i<=4;i++){let y=top+ph*i/4,val=max-(max-min)*i/4;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(w-right,y);ctx.stroke();ctx.fillStyle="#8290a2";ctx.textAlign="right";ctx.fillText(fmt(val,0),left-7,y+3)}
+ const x=i=>left+(labels.length<=1?pw/2:i*pw/(labels.length-1)), y=v=>top+(max-v)*ph/(max-min);
+ series.forEach(s=>{
+  ctx.strokeStyle=s.color;ctx.lineWidth=2.2;ctx.beginPath();let started=false;
+  s.values.forEach((v,i)=>{if(v===null||!Number.isFinite(v)){started=false;return}if(!started){ctx.moveTo(x(i),y(v));started=true}else ctx.lineTo(x(i),y(v))});ctx.stroke();
+  s.values.forEach((v,i)=>{if(v===null||!Number.isFinite(v))return;ctx.beginPath();ctx.fillStyle=s.color;ctx.arc(x(i),y(v),3,0,Math.PI*2);ctx.fill()});
+ });
+ labels.forEach((l,i)=>{if(labels.length>9 && i%2!==0 && i!==labels.length-1)return;ctx.fillStyle="#8290a2";ctx.textAlign="center";ctx.fillText(l,x(i),h-10)});
+}
+function renderTrend(rows){
+ const year=$("yearFilter").value;
+ const years=year==="all"?[2025,2026]:[Number(year)];
+ const labels=MONTHS.map(m=>m.slice(0,3));
+ const series=years.map(y=>({name:String(y),color:COLORS[y],values:MONTHS.map((m,i)=>{let d=rows.find(r=>r.year===y&&r.monthNo===i+1&&complete(r));return d?d.total:null})}));
+ lineChart("trendChart",series,labels);
+ $("trendLegend").innerHTML=series.map(s=>`<span><i class="dot" style="background:${s.color}"></i>${s.name}</span>`).join("");
+}
+function renderMix(pre,post,meeting,total){
+ const {ctx,w,h}=canvasSetup("mixChart");baseChart(ctx,w,h);
+ if(!total){ctx.fillText("Belum ada data lengkap",18,h/2);$("mixInsight").textContent="";return}
+ const vals=[pre/total,post/total,meeting/total], colors=[COLORS.pre,COLORS.post,COLORS.meeting],names=["Pre-OP","Post-OP","Rapat"];
+ const cx=w/2,cy=h/2-3,r=Math.min(w,h)*.34,inner=r*.64;let start=-Math.PI/2;
+ vals.forEach((v,i)=>{let end=start+Math.PI*2*v;ctx.beginPath();ctx.arc(cx,cy,r,start,end);ctx.arc(cx,cy,inner,end,start,true);ctx.closePath();ctx.fillStyle=colors[i];ctx.fill();start=end});
+ ctx.textAlign="center";ctx.fillStyle="#172334";ctx.font="700 18px Segoe UI";ctx.fillText(pct(meeting/total),cx,cy-1);ctx.font="10px Segoe UI";ctx.fillStyle="#7d8999";ctx.fillText("Rasio Rapat",cx,cy+15);
+ $("mixInsight").textContent=names.map((n,i)=>`${n}: ${pct(vals[i])}`).join("  ·  ");
+}
+function renderYoY(rows){
+ const year=$("yearFilter").value;
+ const labels=MONTHS.map(m=>m.slice(0,3));
+ const values=MONTHS.map((m,i)=>{
+  const a=DATA.find(d=>d.year===2025&&d.monthNo===i+1&&complete(d)),b=DATA.find(d=>d.year===2026&&d.monthNo===i+1&&complete(d));
+  if(!a||!b)return null;
+  if(year==="2025"||year==="2026")return (b.total-a.total)/a.total*100;
+  return (b.total-a.total)/a.total*100;
+ });
+ lineChart("yoyChart",[{name:"YoY",color:"#8064c8",values}],labels,{min:Math.min(-50,...values.filter(v=>v!==null)),max:Math.max(35,...values.filter(v=>v!==null))});
+ const available=values.filter(v=>v!==null);
+ $("yoyInsight").textContent=available.length?`Periode dengan data pembanding lengkap: ${available.length} bulan. Nilai positif berarti durasi 2026 lebih tinggi; nilai negatif berarti lebih rendah dibanding bulan yang sama pada 2025.`:"Belum tersedia pasangan data untuk perbandingan YoY.";
+}
+function renderDaily(rows){
+ const year=$("yearFilter").value,years=year==="all"?[2025,2026]:[Number(year)],labels=MONTHS.map(m=>m.slice(0,3));
+ const series=years.map(y=>({name:String(y),color:COLORS[y],values:MONTHS.map((m,i)=>{let d=rows.find(r=>r.year===y&&r.monthNo===i+1&&complete(r));return d?d.total/d.workdays:null})}));
+ lineChart("dailyChart",series,labels);
+}
+function renderTable(rows){
+ const body=$("dataBody");body.innerHTML="";
+ rows.slice().sort((a,b)=>a.year-b.year||a.monthNo-b.monthNo).forEach(d=>{
+  const ok=complete(d),daily=ok?d.total/d.workdays:null,ratio=ok?d.meeting/d.total:null;
+  const tr=document.createElement("tr");
+  const statusClass=d.status==="BELUM INPUT"?"pending":d.status==="PERIKSA DATA"?"check":"";
+  tr.innerHTML=`<td>${d.month}</td><td>${d.year}</td><td>${ok?fmt(d.total):"—"}</td><td>${daily===null?"—":fmt(daily,2)}</td><td>${ok?fmt(d.pre):"—"}</td><td>${ok?fmt(d.post):"—"}</td><td>${ok?fmt(d.meeting):"—"}</td><td>${ok?fmt(d.workdays):"—"}</td><td>${ratio===null?"—":pct(ratio)}</td><td><span class="status ${statusClass}">${d.status}</span></td>`;
+  body.appendChild(tr);
+ });
+ $("tableCount").textContent=rows.length+" baris periode ditampilkan · "+rows.filter(complete).length+" bulan lengkap";
+}
+window.addEventListener("resize",()=>render());
+init();
+</script>
+</body>
+</html>
